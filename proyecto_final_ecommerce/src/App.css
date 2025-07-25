@@ -1,0 +1,97 @@
+#root {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+nav{
+  padding: 0 2.5rem;
+}
+
+nav ul{
+  display: flex;
+  list-style: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.li-img{
+  margin-left: 1rem;
+  margin-right: auto;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los items */
+
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+nav ul li .link img {
+    height: 75px;
+    padding: 0;
+}
+
+.btnCart-nav{
+    background-color: transparent;
+    color: red;
+    border: none;
+}
+
+ul .link{
+  text-decoration: none;
+  color: white;
+}
+
+.home-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.home-main{
+  flex: 1;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.nav-container{
+  width: 100%;
+}
