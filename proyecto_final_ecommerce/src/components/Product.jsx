@@ -2,18 +2,18 @@ import { useState } from "react";
 import "./styles/styleProductos.css";
 
 
-const Productos = ({producto, addToCart}) => {
+const Product = ({producto, addToCart}) => {
   const [cantidad, setCantidad] = useState(1);
 
 
   const increase = () =>
-    setCantidad((prev) => (prev < producto.stock ? prev + 1 : prev));
-  const decrease = () => setCantidad((prev) => (prev > 1 ? prev - 1 : 1));
+    setCantidad((prod) => (prod < producto.stock ? prod + 1 : prod));
+  const decrease = () => setCantidad((prod) => (prod > 1 ? prod - 1 : 1));
 
   return (
     <section className="card">
       <div className="imganContainer">
-        <img src={producto.imagen} alt="" className="imagen" />
+        <img src={producto.imagen} alt="Imagen del Producto" className="imagen" />
       </div>
 
       <h3 className="nombre">{producto.nombre}</h3>
@@ -21,11 +21,11 @@ const Productos = ({producto, addToCart}) => {
       <p className="stock">{producto.stock}</p>
 
       <div className="cantidadContainer">
-        <button className="qtyButton" onClick={decrease}>
+        <button className="product-Button" onClick={decrease}>
           -
         </button>
         <span>{cantidad}</span>
-        <button className="qtyButton" onClick={increase}>
+        <button className="product-Button" onClick={increase}>
           +
         </button>
       </div>
@@ -39,4 +39,4 @@ const Productos = ({producto, addToCart}) => {
   );
 };
 
-export default Productos;
+export default Product;

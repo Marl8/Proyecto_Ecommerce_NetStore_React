@@ -1,7 +1,7 @@
 import Footer from '../components/Footer.jsx'
 import Header from '../components/Header.jsx'
 
-const Contacto = (cart, setCart) => {
+const Contacto = ({cart, setCart}) => {
   return (
     <div className='home-container'>
       <Header cart={cart} setCart={setCart}/>

@@ -2,8 +2,11 @@ import Footer from '../components/Footer.jsx'
 import Header from '../components/Header.jsx'
 import GalleryProducts from '../components/GalleryProducts.jsx'
 import logo from '../assets/netstore_logo.svg'
+import { useState } from 'react'
 
-const Home = ({products, setProducts, cart, setCart}) => {
+const Home = ({cart, setCart}) => {
+
+    const [products, setProducts] = useState([]);
 
     const handleAddToCart =(product, cantidadItems)=>{
     // Si el producto existe devuelve el producto sino devuelve un NULL
