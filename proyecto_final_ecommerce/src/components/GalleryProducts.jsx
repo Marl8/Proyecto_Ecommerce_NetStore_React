@@ -3,8 +3,7 @@ import loading from '../assets/loading.gif'
 import NotFound from './NotFound';
 import Product from './Product';
 
-const GalleryProducts = () => {
-  const [products, setProducts] = useState([]);
+const GalleryProducts = ({products, setProducts, addToCart}) => {
   const [cargando, setCarga] = useState(true)
   const [error, setError] = useState(false)
 
@@ -25,7 +24,7 @@ const GalleryProducts = () => {
       }
     }
     findProducts();
-  }, [])
+  }, [setProducts])
 
   if(error){
     return <NotFound/>
@@ -33,12 +32,12 @@ const GalleryProducts = () => {
 
   return (
     <>
-      <h2 style={{padding: '1.5rem'}}>Galeria de productos</h2>
+      <h2 style={{padding: '1.5rem'}}>Nuestros productos</h2>
       <div style={{display:'flex', flexWrap:'wrap', justifyContent:'space-evenly'}}>
           {
               cargando ? <img src={loading} alt='loading' /> :
               products.map(producto => (
-                  <Product key={producto.id} producto={producto}/>
+                  <Product key={producto.id} producto={producto} addToCart= {addToCart}/>
               ))
           }
       </div>

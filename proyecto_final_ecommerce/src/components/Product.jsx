@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./styles/styleProductos.css";
 
 
-const Productos = ({producto}) => {
+const Productos = ({producto, addToCart}) => {
   const [cantidad, setCantidad] = useState(1);
 
 
@@ -29,7 +29,10 @@ const Productos = ({producto}) => {
           +
         </button>
       </div>
-      <button>
+      <button onClick={() => {
+        addToCart(producto, cantidad);
+        setCantidad(1);
+      }}>
         Agregar al carrito
       </button>     
     </section>

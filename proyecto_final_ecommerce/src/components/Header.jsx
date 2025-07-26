@@ -1,9 +1,9 @@
 import Nav from '../components/Nav.jsx'
 
-const Header = () => {
+const Header = ({cart, setCart}) => {
   return (
     <div className='nav-container'>
-      <Nav/>
+      <Nav cart={cart} setCart={setCart}/>
     </div>
   )
 }

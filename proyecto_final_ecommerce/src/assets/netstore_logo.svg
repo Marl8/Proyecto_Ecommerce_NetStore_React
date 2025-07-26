@@ -1,0 +1,41 @@
+<svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="netGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icono - Red/Conexión -->
+  <g transform="translate(10, 20)">
+    <!-- Nodos de la red -->
+    <circle cx="8" cy="8" r="3" fill="#3B82F6"/>
+    <circle cx="24" cy="8" r="3" fill="#1D4ED8"/>
+    <circle cx="32" cy="20" r="3" fill="#3B82F6"/>
+    <circle cx="16" cy="32" r="3" fill="#1D4ED8"/>
+    <circle cx="8" cy="20" r="3" fill="#3B82F6"/>
+    
+    <!-- Conexiones -->
+    <line x1="8" y1="8" x2="24" y2="8" stroke="url(#netGradient)" stroke-width="2"/>
+    <line x1="24" y1="8" x2="32" y2="20" stroke="url(#netGradient)" stroke-width="2"/>
+    <line x1="8" y1="20" x2="16" y2="32" stroke="url(#netGradient)" stroke-width="2"/>
+    <line x1="8" y1="8" x2="8" y2="20" stroke="url(#netGradient)" stroke-width="2"/>
+    <line x1="24" y1="8" x2="16" y2="32" stroke="url(#netGradient)" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Texto NetStore -->
+  <text x="55" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1F2937">
+    Net
+  </text>
+  <text x="55" y="55" font-family="Arial, sans-serif" font-size="24" font-weight="300" fill="#6B7280">
+    Store
+  </text>
+  
+  <!-- Elemento decorativo moderno -->
+  <rect x="135" y="30" width="3" height="20" fill="url(#netGradient)" rx="1.5"/>
+  
+  <!-- Texto secundario -->
+  <text x="150" y="40" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#9CA3AF" letter-spacing="1px">
+    ECOMMERCE
+  </text>
+</svg>

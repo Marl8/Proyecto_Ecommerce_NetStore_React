@@ -5,7 +5,7 @@
     padding: 16px;
     margin-bottom: 0.5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas responsivas */
+    grid-template-columns: repeat(auto-fill, 1fr); /* Columnas responsivas */
     gap: 20px; /* Espacio entre tarjetas */
     transition: box-shadow 0.3s ease;
 }
@@ -32,7 +32,7 @@
     font-size: 18px;
     font-weight: 600;
     color: #333333;
-    margin-bottom: 4px;
+    margin-bottom: 0.2rem;
     text-align: center;
 }
 
@@ -40,12 +40,21 @@
     font-size: 16px;
     font-weight: 700;
     color: #2563eb;
-    margin-bottom: 4px;
+    margin-bottom: 0.2rem;
 }
+
 .stock{
     font-size: 14px;
+    background-color: #f6f6f6;
     color: #666666;
-    margin-bottom: 12px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    border: 1px solid rgb(103, 100, 100);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem;
+    border-radius: 6px; 
 }
 
 .cantidadContainer{
