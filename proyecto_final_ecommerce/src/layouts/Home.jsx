@@ -16,7 +16,7 @@ const Home = ({cart, setCart}) => {
       // Si el producto existe actualiza la cantidad
       setCart(cart.map((item) => item.id === product.id ? {...item, cantidad:item.cantidad+cantidadItems}: item ))
     }else{
-      // Si el producto no existe significa que es l primero de su tipo en el carrito por lo cual la cantidad va a ser 1
+      // Si el producto no existe significa que es el primero de su tipo en el carrito por lo cual la cantidad va a ser 1
       setCart([...cart,{...product, cantidad:cantidadItems} ])
     }
   }
