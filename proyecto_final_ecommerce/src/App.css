@@ -75,6 +75,13 @@ nav ul li .link img {
     border: none;
 }
 
+.navButton{
+  background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem;
+}
+
 ul .link{
   text-decoration: none;
   color: white;
@@ -146,12 +153,15 @@ ul .link{
 }
 
   .btnCart-nav{
-    background-color: transparent;
-    color: red;
-    border: none;
     width: 100%;
     text-align: center;
   }
+
+  .navButton{
+    width: 100%;
+    text-align: center;
+}
+
 
   .home-main{
   flex: 1;

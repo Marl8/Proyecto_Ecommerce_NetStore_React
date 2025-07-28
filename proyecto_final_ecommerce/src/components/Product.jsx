@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {Link} from 'react-router-dom';
 import "./styles/styleProductos.css";
 
 
@@ -35,6 +36,7 @@ const Product = ({producto, addToCart}) => {
       }}>
         Agregar al carrito
       </button>     
+      <Link to={`/producto/${producto.id}`} className="product-Button">Ver más</Link>
     </section>
   );
 };
