@@ -8,37 +8,7 @@ import NavAdmin from "./NavAdmin.jsx";
 const Nav = () => {
 
   const { cart, setCartOpen, isAuthenticated } = useContext(CartContext)
-  /*
-  const [isCartOpen, setCartOpen] = useState(false);
 
-  const borrarProducto = (product) => {
-    setCart((cart) => {
-      /**
-       * Si el producto existe y la cantidad del producto existente en el carrito es mayor a 1
-       * entonces se resta 1 a la cantidad del producto existente en el carrito (por ejemplo hay seleccionadas 3
-       * lapiceras en el carrito se borra 1 y quedan 2).
-       * En caso contrario se devuelve un NULL.
-       * Por último se filtran todos los productos distintos a NULL y nos quedarán todos los productos existentes en
-       * el carrito de compras.
-      
-      return cart
-        .map((item) => {
-          if (item.id === product.id && item.cantidad > 1) {
-            return { ...item, cantidad: item.cantidad - 1 };
-          } else if (item.id === product.id && item.cantidad === 1) {
-            return null;
-          } else {
-            return item;
-          }
-        })
-        .filter((item) => item != null);
-    });
-  };
-
-  const vaciarCarrito = () => {
-    setCart([]);
-  };
-  */
   const cartCount = cart.length;
 
   return (
@@ -83,6 +53,13 @@ const Nav = () => {
                 setCartOpen(false);
               }}
             />
+            <li style={{border: '1px solid white', 
+              borderRadius: '5px', 
+              padding: '2px'}}>
+          <Link className='link' to={"/Login"}>
+            Login
+          </Link>
+        </li>
           </>
         )}
       </ul>

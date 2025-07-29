@@ -7,29 +7,7 @@ import Product from './Product';
 const GalleryProducts = () => {
   
   const {products, addToCart, error, cargando} = useContext(CartContext)
-
-  /*const [cargando, setCarga] = useState(true)
-  const [error, setError] = useState(false)
-
-
-  useEffect(()=>{
-    const findProducts = async () =>{
-      try{
-        const response = await fetch('/data/products.json')
-        const result = await response.json();
-        setTimeout(()=>{
-          setProducts(result)
-          setCarga(false)
-        },1000)
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setCarga(false);
-        setError(true);
-      }
-    }
-    findProducts();
-  }, [setProducts])
-  */
+  
   if(error){
     return <NotFound/>
   }

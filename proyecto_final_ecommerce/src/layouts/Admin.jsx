@@ -70,7 +70,7 @@ const Admin = () => {
                 />
                 <span>{product.nombre}</span>
                 <span>${product.precio}</span>
-                <div>
+                <div className="buttons-admin-container">
                   <button className="edit-button">Editar</button>
 
                   <button className="delete-button">Eliminar</button>

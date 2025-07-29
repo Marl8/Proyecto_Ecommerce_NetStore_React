@@ -157,6 +157,11 @@ ul .link{
     text-align: center;
   }
 
+  .btnLogin-nav{
+    
+    color: aqua;
+  }
+
   .navButton{
     width: 100%;
     text-align: center;

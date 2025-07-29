@@ -55,27 +55,34 @@
 }
 
 .list img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    width: 150px;
+    height: 150px;
 }
 
 .listItem {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 2rem;
     border-bottom: 1px solid #ccc;
 }
+
 .listItem span {
     
     font-size: 18px;
-    margin-bottom: 5px;
+    padding: 0.5rem 0 0.3rem;
+    text-align: center;
+}
+
+.buttons-admin-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0.5rem;
 }
 
 .edit-button {
-    margin: 1rem;
     padding: 0.5rem 1.5rem;
     background-color: #2196F3;
     color: white;
