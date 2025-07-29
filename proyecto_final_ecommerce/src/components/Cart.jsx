@@ -1,8 +1,13 @@
 import './styles/styleCart.css'
+import { useContext } from 'react';
+import CartContext from '../context/CartContext';
 
-const Cart = ({ cart, vaciarCart, isOpen, onClose, borrarProducto }) => {
+const Cart = ({onClose}) => {
+
+  const { cart, isCartOpen, borrarProducto, vaciarCarrito } = useContext(CartContext)
+  
   return (
-    <div className={`cart-drawer ${isOpen ? "open" : ""}`}>
+    <div className={`cart-drawer ${isCartOpen ? "open" : ""}`}>
       <div className="cart-header">
         <h3>Carrito de Compras</h3>
         <button onClick={onClose} className="close-button">
@@ -33,7 +38,7 @@ const Cart = ({ cart, vaciarCart, isOpen, onClose, borrarProducto }) => {
         )}
       </div>
       <div className="vaciar-btn">
-        <button onClick={vaciarCart}>Vaciar Carrito</button>
+        <button onClick={vaciarCarrito}>Vaciar Carrito</button>
       </div>
     </div>
   );

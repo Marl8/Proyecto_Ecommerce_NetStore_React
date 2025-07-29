@@ -1,10 +1,14 @@
-import {useState, useEffect} from 'react'
+import CartContext from "../context/CartContext.jsx";
+import { useContext } from 'react';
 import loading from '../assets/loading.gif'
 import NotFound from './NotFound';
 import Product from './Product';
 
-const GalleryProducts = ({products, setProducts, addToCart}) => {
-  const [cargando, setCarga] = useState(true)
+const GalleryProducts = () => {
+  
+  const {products, addToCart, error, cargando} = useContext(CartContext)
+
+  /*const [cargando, setCarga] = useState(true)
   const [error, setError] = useState(false)
 
 
@@ -25,7 +29,7 @@ const GalleryProducts = ({products, setProducts, addToCart}) => {
     }
     findProducts();
   }, [setProducts])
-
+  */
   if(error){
     return <NotFound/>
   }

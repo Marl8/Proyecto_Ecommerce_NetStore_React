@@ -1,10 +1,10 @@
 import Footer from '../components/Footer.jsx'
 import Header from '../components/Header.jsx'
 
-const Acerca = ({cart, setCart, isAuthenticated}) => {
+const Acerca = () => {
   return (
     <div className='home-container'>
-      <Header cart={cart} setCart={setCart} isAuthenticated={isAuthenticated}/>
+      <Header />
       <div className='home-main'>
         <h1>Acerca de Nosotros</h1>
       </div>

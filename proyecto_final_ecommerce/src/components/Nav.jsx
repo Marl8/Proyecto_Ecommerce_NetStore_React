@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/netstore_logo1.svg";
-import { useState } from "react";
+import { useContext } from "react";
+import CartContext from "../context/CartContext.jsx";
 import Cart from "./Cart.jsx";
 import NavAdmin from "./NavAdmin.jsx";
 
-const Nav = ({ cart, setCart, isAuthenticated }) => {
+const Nav = () => {
+
+  const { cart, setCartOpen, isAuthenticated } = useContext(CartContext)
+  /*
   const [isCartOpen, setCartOpen] = useState(false);
 
   const borrarProducto = (product) => {
@@ -16,7 +20,7 @@ const Nav = ({ cart, setCart, isAuthenticated }) => {
        * En caso contrario se devuelve un NULL.
        * Por último se filtran todos los productos distintos a NULL y nos quedarán todos los productos existentes en
        * el carrito de compras.
-       */
+      
       return cart
         .map((item) => {
           if (item.id === product.id && item.cantidad > 1) {
@@ -34,7 +38,7 @@ const Nav = ({ cart, setCart, isAuthenticated }) => {
   const vaciarCarrito = () => {
     setCart([]);
   };
-
+  */
   const cartCount = cart.length;
 
   return (
@@ -75,10 +79,6 @@ const Nav = ({ cart, setCart, isAuthenticated }) => {
               </button>
             </li>
             <Cart
-              cart={cart}
-              vaciarCart={vaciarCarrito}
-              borrarProducto={borrarProducto}
-              isOpen={isCartOpen}
               onClose={() => {
                 setCartOpen(false);
               }}

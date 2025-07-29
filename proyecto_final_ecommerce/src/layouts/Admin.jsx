@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./style/Admin.css";
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
+import CartContext from "../context/CartContext.jsx";
 
-const Admin = ({cart, setCart, isAuthenticated}) => {
-  const [products, setProducts] = useState([]);
+const Admin = () => {
+
+  const {products, setProducts, loading, setLoading} = useContext(CartContext)
+
   const [form, setForm] = useState({ id: null, name: "", price: "" });
-  const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     fetch("/data/products.json")
@@ -21,7 +24,7 @@ const Admin = ({cart, setCart, isAuthenticated}) => {
         console.error("Error fetching data:", error);
         setLoading(false);
       });
-  }, []);
+  }, [setProducts, setLoading]);
 
   return (
     <div className="container">
@@ -29,7 +32,7 @@ const Admin = ({cart, setCart, isAuthenticated}) => {
         <p>Cargando...</p>
       ) : (
         <>
-          <Header cart={cart} setCart={setCart} isAuthenticated={isAuthenticated}/>
+          <Header/>
           <div className="title-admin-container">
             <h1 className="title-admin">Panel Administrativo</h1>
           </div>

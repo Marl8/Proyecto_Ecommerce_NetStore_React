@@ -5,7 +5,7 @@ import Header from '../components/Header.jsx'
 import NotFound from '../components/NotFound.jsx'
 import load from '../assets/loading.gif'
 
-const DetalleProducto = ({cart, setCart, isAuthenticated}) => {
+const DetalleProducto = () => {
 
 const {id} = useParams();
 const [product, setProduct] = useState(null)
@@ -38,7 +38,7 @@ if(loading){
       // Redendizado opcional si existe el producto lo muestra y sino muestra el NotFound  
       product ? (
         <div className='home-container'>
-          <Header cart={cart} setCart={setCart} isAuthenticated={isAuthenticated}/>
+          <Header/>
             <div className='home-main'>
               <h1>Detalle del Producto</h1>
               <p>{product.id}</p>
