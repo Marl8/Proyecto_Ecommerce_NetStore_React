@@ -15,9 +15,10 @@ function RutaProtegida({ children }) {
   const {isAuthenticated} = useContext(CartContext);
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" replace/> // El replace impide que se pueda volver para atrás
-  }
+    return <Navigate to="/login" replace />;
+  }  
   return children;
 }
 
 export default RutaProtegida;
+

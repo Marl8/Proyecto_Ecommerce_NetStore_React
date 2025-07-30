@@ -8,13 +8,38 @@ export function CartProvider({ children }) {
 
 	const [cart, setCart] = useState([])
   const [products, setProducts] = useState([]);
-  const [isAuthenticated, setIsAuth] = useState(false)
+  //const [isAuthenticated, setIsAuth] = useState(false)
+  //const [rol, setRol] = useState('')
 	const [cargando, setCarga] = useState(true)
   const [error, setError] = useState(false)
 	const [isCartOpen, setCartOpen] = useState(false);
 	const [product, setProduct] = useState(null)
 	const [loading, setLoading] = useState(true);
 
+
+  /**
+   * El estado de autenticación (isAuth) solo vive en memoria (useState / context)
+   * y no está persistido en ningún lugar como localStorage o sessionStorage.
+   * Cuando el usuario refresca la página o accede directamente a una URL (por ejemplo,
+   * escribiendo /admin en la barra de direcciones), todo el estado en memoria se pierde
+   * porque React reinicia el ciclo de vida de la app.
+   */
+
+  const [isAuthenticated, setIsAuth] = useState(() => {
+    return localStorage.getItem('isAuth') === 'true';
+  });
+
+  const [rol, setRol] = useState(() => {
+    return localStorage.getItem('rol') || '';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('isAuth', isAuthenticated);
+  }, [isAuthenticated]);
+
+  useEffect(() => {
+    localStorage.setItem('rol', rol);
+  }, [rol]);
 
   // Wrap las funciones con useCallback para evitar cambios de referencia
   const stableSetProduct = useCallback((data) => setProducts(data), []);
@@ -96,7 +121,7 @@ export function CartProvider({ children }) {
 	return(
 			<CartContext.Provider value={{cart, setCart, products, setProducts: stableSetProduct, isAuthenticated, setIsAuth,
 				cargando, setCarga, error, setError, isCartOpen, setCartOpen, borrarProducto, vaciarCarrito,
-				addToCart, product, setProduct, loading, setLoading: stableSetLoading}}>
+				addToCart, product, setProduct, loading, setLoading: stableSetLoading, rol, setRol}}>
 					{children}
 			</CartContext.Provider>
 	)

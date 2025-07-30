@@ -45,11 +45,14 @@ nav ul{
   list-style: none;
   cursor: pointer;
   align-items: center;
-  justify-content: flex-end;
 }
 
 .li-img{
   margin-right: auto;
+}
+
+ul .li-contacto{
+  margin-right: auto; /* Desplaza los elementos hacia la derecha */
 }
 
 nav ul li {
@@ -73,6 +76,8 @@ nav ul li .link img {
     background-color: transparent;
     color: red;
     border: none;
+    padding-left: 0.5rem; 
+    padding-right: 0;
 }
 
 .navButton{
@@ -105,6 +110,15 @@ ul .link{
 .nav-container{
   width: 100%;
 }
+
+.boton-login {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 2px;
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+  }
 
 
 /* Media Queries */
@@ -155,6 +169,7 @@ ul .link{
   .btnCart-nav{
     width: 100%;
     text-align: center;
+    padding-left: 0;
   }
 
   .btnLogin-nav{
@@ -163,8 +178,9 @@ ul .link{
   }
 
   .navButton{
-    width: 100%;
+    width: 50%;
     text-align: center;
+    margin: 0.5rem auto 1.5rem auto;
 }
 
 
@@ -173,5 +189,13 @@ ul .link{
   padding: 1rem;
   margin: 1rem;
   margin-top: 1rem;
+  }
+
+  .boton-login {
+    color: white;
+    text-decoration: none;
+    width: fit-content;
+    margin: 1.5rem auto 1.5rem auto;
+    padding: 0 2rem;
   }
 }

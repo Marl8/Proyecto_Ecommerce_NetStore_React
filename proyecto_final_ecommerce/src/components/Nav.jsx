@@ -3,7 +3,7 @@ import logo from "../assets/netstore_logo1.svg";
 import { useContext } from "react";
 import CartContext from "../context/CartContext.jsx";
 import Cart from "./Cart.jsx";
-import NavAdmin from "./NavAdmin.jsx";
+import NavAuth from "./NavAuth.jsx";
 
 const Nav = () => {
 
@@ -29,37 +29,36 @@ const Nav = () => {
             Acerca de
           </Link>
         </li>
-        <li>
+        <li className="li-contacto">
           <Link className="link" to={"/contacto"}>
             Contacto
           </Link>
         </li>
-        {
-        isAuthenticated ? (<NavAdmin />) : (
-          <>
-            <li className="nav-count-items">Items: {cartCount}</li>
-            <li>
-              <button
-                className="btnCart-nav"
-                onClick={() => {
-                  setCartOpen(true);
-                }}
-              >
-                <i className="fa-solid fa-cart-shopping"></i>
-              </button>
-            </li>
-            <Cart
-              onClose={() => {
-                setCartOpen(false);
-              }}
-            />
-            <li style={{border: '1px solid white', 
-              borderRadius: '5px', 
-              padding: '2px'}}>
-          <Link className='link' to={"/Login"}>
-            Login
-          </Link>
+        <li className="nav-count-items">Items: {cartCount}</li>
+        <li>
+          <button
+            className="btnCart-nav"
+            onClick={() => {
+              setCartOpen(true);
+            }}
+          >
+            <i className="fa-solid fa-cart-shopping"></i>
+          </button>
         </li>
+        <Cart
+          onClose={() => {
+            setCartOpen(false);
+          }}
+        />
+        {
+          isAuthenticated ? (<NavAuth/>) : 
+          (
+          <>
+            <li className= 'boton-login'>
+              <Link className='link' to={"/Login"}>
+                Login
+              </Link>
+            </li>
           </>
         )}
       </ul>
