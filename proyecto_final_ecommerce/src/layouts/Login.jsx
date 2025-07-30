@@ -6,15 +6,14 @@ import CartContext  from '../context/CartContext';
 const Login = () => {
 
   // Se inicializa para garantiza que las funciones existan y no sean UNIFINED (aunque hagan nada)
-  const {setIsAuth, isAuthenticated, rol, setRol = ()=>{} } = useContext(CartContext);
+  const {setIsAuth, isAuthenticated, rol, setRol = ()=>{}, errors, setErrors } = useContext(CartContext);
   
   const navigate = useNavigate();
   
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
-  const [errors, setErrors] = useState({})
 
-  // Si el usuario ya está autenticado, lo redirigimos
+  // 1. Si el usuario ya está autenticado, lo redirigimos
   useEffect(() => {
     if (isAuthenticated) {
       // Si ya está autenticado, redirigir según el rol
@@ -22,6 +21,8 @@ const Login = () => {
     }
   }, [isAuthenticated, rol, navigate])
 
+
+  // 2. Lógica del Login
   const handleSubmit = async (e) => {
     e.preventDefault();
     let validationErrors = {};
@@ -55,9 +56,9 @@ const Login = () => {
     }
   }
 
-  // Si está autenticado, no renderices el formulario (el useEffect lo redirige)
+  // 3. Si está autenticado, no renderiza el formulario (el useEffect lo redirige)
   if (isAuthenticated) {
-    return null; // O un loader breve
+    return null; 
   }
 
   return (

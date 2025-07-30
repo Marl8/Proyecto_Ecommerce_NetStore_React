@@ -12,8 +12,8 @@ export function CartProvider({ children }) {
   //const [rol, setRol] = useState('')
 	const [cargando, setCarga] = useState(true)
   const [error, setError] = useState(false)
+  const [errors, setErrors] = useState({})
 	const [isCartOpen, setCartOpen] = useState(false);
-	const [product, setProduct] = useState(null)
 	const [loading, setLoading] = useState(true);
 
 
@@ -121,7 +121,7 @@ export function CartProvider({ children }) {
 	return(
 			<CartContext.Provider value={{cart, setCart, products, setProducts: stableSetProduct, isAuthenticated, setIsAuth,
 				cargando, setCarga, error, setError, isCartOpen, setCartOpen, borrarProducto, vaciarCarrito,
-				addToCart, product, setProduct, loading, setLoading: stableSetLoading, rol, setRol}}>
+				addToCart, loading, setLoading: stableSetLoading, rol, setRol, errors, setErrors}}>
 					{children}
 			</CartContext.Provider>
 	)

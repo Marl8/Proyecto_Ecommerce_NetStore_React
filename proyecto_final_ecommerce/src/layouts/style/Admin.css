@@ -14,6 +14,10 @@
     position: static;
 }
 
+.title-admin{
+    font-size: 35px;
+}
+
 .title-admin-container {
     text-align: center;
     margin: 8rem 1.5rem 1.5rem; 
@@ -38,8 +42,9 @@
 }
 
 .button {
-    padding: 10px;
+    padding: 1rem;
     font-size: 16px;
+    margin-top: 1.5rem;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -48,8 +53,8 @@
 
 .list {
     list-style: none;
-    padding: 2rem;
-    margin: 1rem 2rem;
+    padding: 0.5rem 2rem;
+    margin: 0rem 2rem 1.5rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
@@ -70,9 +75,15 @@
 
 .listItem span {
     
-    font-size: 18px;
+    font-size: 16px;
     padding: 0.5rem 0 0.3rem;
+    font-weight: 500;
     text-align: center;
+}
+
+.listItem .span-name{
+    
+    font-weight: 600;
 }
 
 .buttons-admin-container{
