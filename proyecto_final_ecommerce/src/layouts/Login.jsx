@@ -1,12 +1,12 @@
 import './style/Login.css'
 import { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CartContext  from '../context/CartContext';
+import AuthContext  from '../context/AuthContext';
 
 const Login = () => {
 
   // Se inicializa para garantiza que las funciones existan y no sean UNIFINED (aunque hagan nada)
-  const {setIsAuth, isAuthenticated, rol, setRol = ()=>{}, errors, setErrors } = useContext(CartContext);
+  const {setIsAuth, isAuthenticated, rol, setRol = ()=>{}, errors, setErrors } = useContext(AuthContext);
   
   const navigate = useNavigate();
   
@@ -47,8 +47,9 @@ const Login = () => {
         setErrors({username: 'Credenciales inválidas'});
       } else {
         console.log('User role:', foundUser.role);
-        setRol(foundUser.role)
+        setRol(foundUser.role);
         setIsAuth(true);
+        setErrors('')
       }
     } catch (err) {
       console.error('Error fetching users:', err);

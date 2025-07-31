@@ -7,8 +7,7 @@ const Product = ({producto, addToCart}) => {
   const [cantidad, setCantidad] = useState(1);
 
 
-  const increase = () =>
-    setCantidad((prod) => (prod < producto.stock ? prod + 1 : prod));
+  const increase = () => setCantidad((prod) => (prod < producto.stock ? prod + 1 : prod));
   const decrease = () => setCantidad((prod) => (prod > 1 ? prod - 1 : 1));
 
   return (

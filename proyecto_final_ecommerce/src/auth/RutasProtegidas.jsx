@@ -1,6 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import { useContext } from 'react';
-import CartContext from '../context/CartContext';
+import AuthContext from '../context/AuthContext';
 
 /**
  * @Param isAuthenticated - booleano
@@ -12,7 +12,7 @@ import CartContext from '../context/CartContext';
  * */
 
 function RutaProtegida({ children }) {
-  const {isAuthenticated} = useContext(CartContext);
+  const {isAuthenticated} = useContext(AuthContext);
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;

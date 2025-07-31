@@ -1,10 +1,10 @@
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import { useContext } from 'react';
-import CartContext from '../context/CartContext';
+import AuthContext from '../context/AuthContext';
 
 const NavAuth = () => {
 
-  const {isAuthenticated, rol, setIsAuth, setRol} = useContext(CartContext)
+  const {isAuthenticated, rol, setIsAuth, setRol} = useContext(AuthContext)
   
   const logOut = ()=>{
     setIsAuth(false);
@@ -17,8 +17,14 @@ const NavAuth = () => {
     <>
       <li className="link"> 
           {isAuthenticated && rol === 'admin'? 
-            <Link className='link' to="/admin">{rol}</Link> : 
-            <Link className='link' to="/">{rol}</Link>
+            <NavLink className='link' to="/admin"  style={({ isActive }) => ({
+            color: isActive ? '#8fd3fe' : 'white'})}>
+              {rol}
+            </NavLink> : 
+            <NavLink className='link' to="/"  style={({ isActive }) => ({
+            color: isActive ? '#8fd3fe' : 'white'})}>
+              {rol}
+            </NavLink>
           }
       </li>
 

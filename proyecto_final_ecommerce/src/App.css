@@ -90,6 +90,7 @@ nav ul li .link img {
 ul .link{
   text-decoration: none;
   color: white;
+  font-weight: 500;
 }
 
 .home-container{

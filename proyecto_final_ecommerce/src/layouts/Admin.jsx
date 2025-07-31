@@ -19,7 +19,7 @@ const Admin = () => {
         setTimeout(() => {
           setProducts(data);
           setLoading(false);
-        }, 2000);
+        }, 400);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
