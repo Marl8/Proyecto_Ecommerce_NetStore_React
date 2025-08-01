@@ -6,8 +6,11 @@ const FormNewProduct = ({ onAgregar }) => {
   const { errors, setErrors } = useContext(CartContext);
   const [product, setProduct] = useState({
     nombre: "",
-    precio: "",
-    descripcion: "",
+    precio: 0,
+    stock: 0, 
+    imagen: "", 
+    categoria: "", 
+    descripcion: ""
   });
 
   // 1. Validamos los campos
@@ -18,6 +21,15 @@ const FormNewProduct = ({ onAgregar }) => {
     }
     if (!product.precio || product.precio <= 0) {
       nuevosErrores.precio = "El precio debe ser mayor a 0.";
+    }
+    if (!product.stock || product.stock <= 0) {
+      nuevosErrores.stock = "El stock debe ser mayor a 0.";
+    }
+    if (!product.imagen.trim()) {
+      nuevosErrores.imagen = "La imagen es obligatoria.";
+    }
+    if (!product.categoria.trim()) {
+      nuevosErrores.categoria = "La categoria es obligatoria.";
     }
     if (!product.descripcion.trim() || product.descripcion.length < 10) {
       nuevosErrores.descripcion =
@@ -34,14 +46,14 @@ const FormNewProduct = ({ onAgregar }) => {
       return;
     }
     onAgregar(product); // Llamada a la función para agregar el producto
-    setProduct({ nombre: "", precio: "", descripcion: "" }); // Limpiar el formulario
+    setProduct({ nombre: "", precio: 0, stock: 0, imagen: "", categoria: "", descripcion: "", }); // Limpiar el formulario
     setErrors({}); // Limpiar Errores
   };
 
   // 3. Manejador del onchage para agregar los atributos al objeto producto
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setProduct({ ...product, [name]: value });
+    setProduct({ ...product, [name]: (name === 'precio' || name === 'stock') ? Number(value) : value });
   };
 
   return (
@@ -71,6 +83,43 @@ const FormNewProduct = ({ onAgregar }) => {
           min="0"
         />
         {errors.precio && <p style={{ color: "red" }}>{errors.precio}</p>}
+      </div>
+      <div className="form-container">
+        <label className="form-label label-new-product">Stock:</label>
+        <input
+          type="number"
+          className="form-input"
+          name="stock"
+          value={product.stock}
+          onChange={handleChange}
+          required
+          min="0"
+        />
+        {errors.stock && <p style={{ color: "red" }}>{errors.stock}</p>}
+      </div>
+      <div className="form-container">
+        <label className="form-label label-new-product">Imagen:</label>
+        <input
+          type="text"
+          className="form-input"
+          name="imagen"
+          value={product.imagen}
+          onChange={handleChange}
+          required
+        />
+        {errors.imagen && <p style={{ color: "red" }}>{errors.imagen}</p>}
+      </div>
+      <div className="form-container">
+        <label className="form-label label-new-product">Categoria:</label>
+        <input
+          type="text"
+          className="form-input"
+          name="categoria"
+          value={product.categoria}
+          onChange={handleChange}
+          required
+        />
+        {errors.categoria && <p style={{ color: "red" }}>{errors.categoria}</p>}
       </div>
 
       <div className="form-container">

@@ -14,6 +14,7 @@ export function CartProvider({ children }) {
 	const [isCartOpen, setCartOpen] = useState(false);
 	const [loading, setLoading] = useState(true);
   const [cantidad, setCantidad] = useState(1);
+  const API_URI = 'https://687e6330efe65e5200868978.mockapi.io/productos-ecommerce/producto';
 
   // Wrap las funciones con useCallback para evitar cambios de referencia
   const stableSetProduct = useCallback((data) => setProducts(data), []);
@@ -25,7 +26,7 @@ export function CartProvider({ children }) {
   useEffect(()=>{
     const findProducts = async () =>{
       try{
-        const response = await fetch('/data/products.json')
+        const response = await fetch(API_URI)
         const result = await response.json();
         setTimeout(()=>{
           setProducts(result)

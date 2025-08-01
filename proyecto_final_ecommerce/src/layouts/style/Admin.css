@@ -49,6 +49,7 @@
     color: white;
     border: none;
     cursor: pointer;
+    margin-right: 1rem;
 }
 
 .list {
@@ -134,5 +135,10 @@
     .form{
     width:80%;
     gap: 10px;
+    }
+
+    .button{
+        margin: 1rem auto;
+        width: 80%;
     }
 }

@@ -67,6 +67,7 @@
     transition: background-color 0.3s ease;
     margin-top: 0.5rem;
     letter-spacing: 0.5px; 
+    width: 20rem;
 }
 
 .contacto-container{

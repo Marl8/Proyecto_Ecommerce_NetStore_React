@@ -11,6 +11,15 @@ h1{
     padding: 1rem 0.5rem 2rem;
 }
 
+.detalle-img{
+    width:350px;
+}
+
+.detalle-img img{
+    width: 100%;
+    height: 100%;
+}
+
 .p-styles{
     text-align: start;
     padding: 0.5rem;

@@ -49,7 +49,9 @@ const DetalleProducto = () => {
             <div className='home-main'>
               <h1>Detalle del Producto</h1>
               <div className="container-style-details">
-                <img src={product.imagen} alt="Imagen del Producto" />
+                <div className='detalle-img'>
+                  <img src={product.imagen} alt="Imagen del Producto" />
+                </div>
                 <p className="p-styles"><strong>Código de Producto:</strong> {product.id}</p>
                 <p className="p-styles"><strong> Nombre del Producto:</strong> {product.nombre}</p>
                 <p className="p-styles"><strong>Precio: $</strong> {product.precio}</p>
