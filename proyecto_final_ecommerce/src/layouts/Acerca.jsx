@@ -6,7 +6,17 @@ const Acerca = () => {
     <div className='home-container'>
       <Header />
       <div className='home-main'>
-        <h1>Acerca de Nosotros</h1>
+        <h1 style={{margin: '2.5rem'}}>Acerca de Nosotros</h1>
+        <img className='img-acerca-de'
+          src="https://oxefruit.es/wp-content/uploads/2024/12/cocteles-tematicos-ideas-eventos-especiales.png" 
+          alt="Imagen cocteles" 
+          />
+        <div className='acerca-text'>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Suscipit saepe similique nisi ullam provident deserunt esse voluptatem odio impedit 
+          exercitationem unde, iste ipsa corporis cupiditate vitae atque debitis sit iusto.
+          </p>
+        </div>
       </div>
       <Footer/>
     </div>

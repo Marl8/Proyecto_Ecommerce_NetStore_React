@@ -13,6 +13,7 @@ export function CartProvider({ children }) {
   const [errors, setErrors] = useState({})
 	const [isCartOpen, setCartOpen] = useState(false);
 	const [loading, setLoading] = useState(true);
+  const [cantidad, setCantidad] = useState(1);
 
   // Wrap las funciones con useCallback para evitar cambios de referencia
   const stableSetProduct = useCallback((data) => setProducts(data), []);
@@ -93,7 +94,7 @@ export function CartProvider({ children }) {
 	return(
 			<CartContext.Provider value={{cart, setCart, products, setProducts: stableSetProduct, 
 				cargando, setCarga, error, setError, isCartOpen, setCartOpen, borrarProducto, vaciarCarrito,
-				addToCart, loading, setLoading: stableSetLoading, errors, setErrors}}>
+				addToCart, loading, setLoading: stableSetLoading, errors, setErrors, cantidad, setCantidad}}>
 					{children}
 			</CartContext.Provider>
 	)

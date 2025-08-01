@@ -6,7 +6,7 @@ import Product from './Product';
 
 const GalleryProducts = () => {
   
-  const {products, addToCart, error, cargando} = useContext(CartContext)
+  const {products, error, cargando} = useContext(CartContext)
   
   if(error){
     return <NotFound/>
@@ -19,7 +19,7 @@ const GalleryProducts = () => {
           {
               cargando ? <img src={loading} alt='loading' /> :
               products.map(producto => (
-                  <Product key={producto.id} producto={producto} addToCart= {addToCart}/>
+                  <Product key={producto.id} producto={producto}/>
               ))
           }
       </div>

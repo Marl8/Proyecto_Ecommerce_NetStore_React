@@ -9,7 +9,7 @@ const Home = () => {
     <div className='home-container'>
       <Header/>
       <div className='home-main'>
-        <div style={{background:'linear-gradient(to right, #ffeeee, #ddefbb)', padding: 0, margin: 0}} >
+        <div style={{background:'linear-gradient(to right, #ffeeee, #ddefbb)', padding: 0, margin: 0}}>
           <img src={logo} style={{margin: '1rem'}} width="50%"  alt="Logo de la tienda" />
         </div>
         <GalleryProducts/>  

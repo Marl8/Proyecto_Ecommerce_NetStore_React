@@ -17,6 +17,9 @@
     margin-bottom: -0.8rem;
     width: 100%; 
     text-align: left;
+}
+
+.label-new-product{
     margin-left: 12rem;
 }
 
@@ -66,6 +69,19 @@
     letter-spacing: 0.5px; 
 }
 
+.contacto-container{
+    padding: 2rem 3rem;
+}
+
+.contacto-btn{
+    width: 90%;
+}
+
+
+
+
+/* Media Queries */
+
 @media (max-width: 768px) {
     
     .container-style {
@@ -85,5 +101,9 @@
 
     .form-textarea {
         width: 17rem;
+    }
+
+    .contacto-container{
+    padding: 1rem;
     }
 }

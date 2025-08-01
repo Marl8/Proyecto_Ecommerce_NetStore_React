@@ -121,6 +121,27 @@ ul .link{
     margin-left: 1rem;
   }
 
+/* Imagen */
+.img-acerca-de {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+/* Contenedor de texto */
+.acerca-text {
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.acerca-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  text-align: center;
+}
+
 
 /* Media Queries */
 
@@ -198,5 +219,14 @@ ul .link{
     width: fit-content;
     margin: 1.5rem auto 1.5rem auto;
     padding: 0 2rem;
+  }
+
+  .img-acerca-de {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .acerca-text{
+    width: 100%;
   }
 }

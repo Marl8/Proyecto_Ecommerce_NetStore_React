@@ -48,7 +48,7 @@ const FormNewProduct = ({ onAgregar }) => {
     <form className="container-style" onSubmit={handleSubmit}>
       <h2 className="form-title">Agregar Producto</h2>
       <div className="form-container">
-        <label className="form-label">Nombre:</label>
+        <label className="form-label label-new-product">Nombre:</label>
         <input
           type="text"
           className="form-input"
@@ -60,7 +60,7 @@ const FormNewProduct = ({ onAgregar }) => {
         {errors.nombre && <p style={{ color: "red" }}>{errors.nombre}</p>}
       </div>
       <div className="form-container">
-        <label className="form-label">Precio:</label>
+        <label className="form-label label-new-product">Precio:</label>
         <input
           type="number"
           className="form-input"
@@ -74,7 +74,7 @@ const FormNewProduct = ({ onAgregar }) => {
       </div>
 
       <div className="form-container">
-        <label className="form-label">Descripción:</label>
+        <label className="form-label label-new-product">Descripción:</label>
         <textarea
           className="form-textarea"
           name="descripcion"
