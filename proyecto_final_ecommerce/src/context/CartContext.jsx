@@ -6,7 +6,6 @@ const CartContext = createContext();
 // Proveedor del contexto
 export function CartProvider({ children }) {
 
-	const [cart, setCart] = useState([])
   const [products, setProducts] = useState([]);
 	const [cargando, setCarga] = useState(true)
   const [error, setError] = useState(false)
@@ -14,11 +13,33 @@ export function CartProvider({ children }) {
 	const [isCartOpen, setCartOpen] = useState(false);
 	const [loading, setLoading] = useState(true);
   const [cantidad, setCantidad] = useState(1);
-  const API_URI = 'https://687e6330efe65e5200868978.mockapi.io/productos-ecommerce/producto';
+  const API_URI = import.meta.env.VITE_API_URI; // Variable de entorno
 
   // Wrap las funciones con useCallback para evitar cambios de referencia
   const stableSetProduct = useCallback((data) => setProducts(data), []);
   const stableSetLoading = useCallback((isLoading) => setLoading(isLoading), []);
+
+  // Guardar carrito en el Storage
+
+  // Estado inicial del carrito leyendo del localStorage
+  const [cart, setCart] = useState(() => {
+    try {
+      const cartItems = localStorage.getItem('cartItems');
+      return cartItems ? JSON.parse(cartItems) : [];
+    } catch (error) {
+      console.error('Error parsing cart items:', error);
+      return [];
+    }
+  });
+
+  // Efecto para sincronizar el carrito con localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('cartItems', JSON.stringify(cart));
+    } catch (error) {
+      console.error('Error saving cart to localStorage:', error);
+    }
+  }, [cart]);
 
 
 	// 1. useEffect paa cargar todos productos
@@ -39,7 +60,7 @@ export function CartProvider({ children }) {
       }
     }
     findProducts();
-  }, [setProducts])
+  }, [setProducts, API_URI])
 
 
   // 2. Función para agregar un tiem al carrito

@@ -9,11 +9,10 @@ const Admin = () => {
 
   const [products, setProducts] = useState([]);
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(null)
-  const [openEditor, setOpenEditor] = useState(false)
+  const [selected, setSelected] = useState(null);
+  const [openEditor, setOpenEditor] = useState(false);
   const [loading, setLoading] = useState(true);
-  const API_URI = 'https://687e6330efe65e5200868978.mockapi.io/productos-ecommerce/producto';
-
+  const API_URI =  import.meta.env.VITE_API_URI; // Variable de entorno
 
 useEffect(() => {
   //fetch("/data/products.json")    
@@ -29,14 +28,14 @@ useEffect(() => {
       console.error("Error fetching data:", error);
       setLoading(false);
     }); 
-  }, []);
+  }, [API_URI]);
 
   const cargarProductos = async()=>{
     try {
-        const res = await fetch(API_URI)
-        const data = await res.json()
-        setProducts(data);
-        setOpen(false);
+      const res = await fetch(API_URI)
+      const data = await res.json()
+      setProducts(data);
+      setOpen(false);
     } catch (error) {
         console.log('Error al cargar productos ', error);
         
@@ -46,12 +45,12 @@ useEffect(() => {
 
   const agregarProducto = async (product) =>{
     try{
-        const respuesta = await fetch(API_URI,{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(product)
+      const respuesta = await fetch(API_URI,{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(product)
     })
     if(!respuesta.ok){
         throw new Error('Error al agregar producto')
@@ -61,29 +60,28 @@ useEffect(() => {
     cargarProductos();
     console.log(data)
     }catch(error){
-        console.log(error.message);
-        
+      console.log(error.message);        
     }
   }
 
   const editProduct = async(product) =>{
     try {
-        const respuesta = await fetch(`${API_URI}/${product.id}`,
-            {method:'PUT',
-                headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(product)
-            })
-            if(!respuesta.ok) {
-              throw Error ('Error al actualizar el producto')
-            }
-            const data = await respuesta.json();
-            console.log(data);              
-            alert('Producto actualizado correctamente')
-            setOpenEditor(false)
-            setSelected(null)
-            cargarProductos()
+      const respuesta = await fetch(`${API_URI}/${product.id}`,
+        {method:'PUT',
+          headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(product)
+        })
+      if(!respuesta.ok) {
+        throw Error ('Error al actualizar el producto')
+      }
+      const data = await respuesta.json();
+      console.log(data);              
+      alert('Producto actualizado correctamente')
+      setOpenEditor(false)
+      setSelected(null)
+      cargarProductos()
     } catch (error) {
         console.log(error.message);
         
@@ -111,9 +109,8 @@ useEffect(() => {
 
   return (
     <div className="container">
-      {loading ? (
-        <p>Cargando...</p>
-      ) : (
+      {loading ? (<p>Cargando...</p>) 
+      : (
         <>
           <Header/>
           <div className="title-admin-container">
@@ -146,8 +143,10 @@ useEffect(() => {
                     setSelected(product)}}>
                     Editar
                   </button>
-
-                  <button className="delete-button" onClick={()=> deleteProduct(product.id)}>Eliminar</button>
+                  <button className="delete-button" onClick={()=> 
+                    deleteProduct(product.id)}>
+                    Eliminar
+                  </button>
                 </div>
               </li>
             ))}

@@ -12,7 +12,9 @@ h1{
 }
 
 .detalle-img{
-    width:350px;
+    width:300px;
+    max-height: 500px;
+    margin: auto;
 }
 
 .detalle-img img{

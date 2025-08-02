@@ -107,4 +107,8 @@
     .contacto-container{
     padding: 1rem;
     }
+
+    .button-form{
+        width: auto;
+    }
 }

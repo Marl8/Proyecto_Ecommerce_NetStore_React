@@ -10,6 +10,7 @@ import './style/DetalleProducto.css'
 const DetalleProducto = () => {
 
   const {addToCart, cantidad, setCantidad}= useContext(CartContext);
+  const API_URI = import.meta.env.VITE_API_URI;
 
   const increase = () => setCantidad((prod) => (prod < product.stock ? prod + 1 : prod));
   const decrease = () => setCantidad((prod) => (prod > 1 ? prod - 1 : 1));
@@ -21,10 +22,10 @@ const DetalleProducto = () => {
   useEffect(()=>{ 
     const findById = async()=>{
       try {
-        const response = await fetch('/data/products.json');
+        const response = await fetch(API_URI);
         const result = await response.json();
         setTimeout(()=>{
-          const prod = result.find(prod => prod.id === parseInt(id))
+          const prod = result.find(prod => prod.id === id)
           setProduct(prod);
           setLoading(false);
         }, 250) 
@@ -33,7 +34,7 @@ const DetalleProducto = () => {
       }
     }
   findById();
-  }, [id]);
+  }, [id, API_URI]);
 
   if(loading){
     return <div><img src={load} alt="Imagen Cargando"/> </div>
@@ -74,9 +75,7 @@ const DetalleProducto = () => {
             </div>
           <Footer/>
         </div>      
-      ) : (
-        <NotFound/>
-      )
+      ) : (<NotFound/>)
     }
   </>  
   )
