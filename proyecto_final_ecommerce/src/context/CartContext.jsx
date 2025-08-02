@@ -66,22 +66,22 @@ export function CartProvider({ children }) {
   // 2. Función para agregar un tiem al carrito
 
   const addToCart = (product, cantidadItems) => {
-  // Verifica si el producto ya está en el carrito
-  const productExist = cart.find(item => item.id === product.id);
+    // Verifica si el producto ya está en el carrito
+    const productExist = cart.find(item => item.id === product.id);
 
-  if (productExist) {
-    // Si el producto existe, actualiza la cantidad
-    setCart(cart.map((item) =>
-      item.id === product.id ? { ...item, cantidad: item.cantidad + cantidadItems } : item
-    ));
-  } else {
-    // Si el producto no existe, agrega el nuevo producto al carrito con la cantidad indicada
-    setCart([...cart, { ...product, cantidad: cantidadItems }]);
+    if (productExist) {
+      // Si el producto existe, actualiza la cantidad
+      setCart(cart.map((item) =>
+        item.id === product.id ? { ...item, cantidad: item.cantidad + cantidadItems } : item
+      ));
+    } else {
+      // Si el producto no existe, agrega el nuevo producto al carrito con la cantidad indicada
+      setCart([...cart, { ...product, cantidad: cantidadItems }]);
+    }
   }
-}
 
 
-// 3. Función para borrar un item del carrtito
+  // 3. Función para borrar un item del carrtito
 
 	const borrarProducto = (product) => {
     setCart((cart) => {
@@ -114,11 +114,11 @@ export function CartProvider({ children }) {
   };
 
 	return(
-			<CartContext.Provider value={{cart, setCart, products, setProducts: stableSetProduct, 
-				cargando, setCarga, error, setError, isCartOpen, setCartOpen, borrarProducto, vaciarCarrito,
-				addToCart, loading, setLoading: stableSetLoading, errors, setErrors, cantidad, setCantidad}}>
-					{children}
-			</CartContext.Provider>
+  <CartContext.Provider value={{cart, setCart, products, setProducts: stableSetProduct, 
+    cargando, setCarga, error, setError, isCartOpen, setCartOpen, borrarProducto, vaciarCarrito,
+    addToCart, loading, setLoading: stableSetLoading, errors, setErrors, cantidad, setCantidad}}>
+      {children}
+  </CartContext.Provider>
 	)
 }
 
