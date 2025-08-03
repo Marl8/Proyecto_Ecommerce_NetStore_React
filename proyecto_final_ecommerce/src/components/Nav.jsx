@@ -5,6 +5,7 @@ import CartContext from "../context/CartContext.jsx";
 import AuthContext from "../context/AuthContext.jsx";
 import Cart from "./Cart.jsx";
 import NavAuth from "./NavAuth.jsx";
+import LogOut from "./LogOut.jsx";
 
 const Nav = () => {
 
@@ -33,21 +34,23 @@ const Nav = () => {
             Acerca de
           </NavLink>
         </li>
-        <li className="li-contacto">
+        <li className={!isAuthenticated ? "li-final":''}>
           <NavLink className="link" to={"/contacto"} style={({ isActive }) => ({
             color: isActive ? '#8fd3fe' : 'white'})}>
             Contacto
           </NavLink>
         </li>
-        <li className="nav-count-items">Items: {cartCount}</li>
-        <li>
+        {isAuthenticated ? <NavAuth/> : ''}
+        <li className="cart-icon-container">
           <button
             className="btnCart-nav"
-            onClick={() => {
-              setCartOpen(true);
-            }}
+            onClick={() => setCartOpen(true)}
+            aria-label={`Carrito (${cartCount} items)`}
           >
             <i className="fa-solid fa-cart-shopping"></i>
+            {cartCount > 0 && (
+              <span className="cart-badge">{cartCount}</span>
+            )}
           </button>
         </li>
         <Cart
@@ -55,8 +58,16 @@ const Nav = () => {
             setCartOpen(false);
           }}
         />
-        {
-          isAuthenticated ? (<NavAuth/>) : 
+        { isAuthenticated ? (
+          <>
+            <li>
+              <button className="btnUser-nav">
+                <i className="fa-solid fa-user-tie"></i>
+              </button>
+            </li>
+            <LogOut/>
+          </>
+          ) : 
           (
           <>
             <li className= 'boton-login'>

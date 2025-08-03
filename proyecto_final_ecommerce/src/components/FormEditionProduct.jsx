@@ -79,10 +79,11 @@ function FormEditionProduct({ productSelected, onEdit }) {
       </div>
       <div className="form-container">
         <label className="form-label label-new-product">Descripcion:</label>
-        <input
+        <textarea
           type="text"
           name="descripcion"
           className="form-input"
+          style={{height: '10rem'}}
           value={product.descripcion || ""}
           onChange={handleChange}
           required

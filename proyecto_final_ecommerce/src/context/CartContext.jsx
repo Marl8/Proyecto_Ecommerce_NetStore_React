@@ -25,7 +25,7 @@ export function CartProvider({ children }) {
   const [cart, setCart] = useState(() => {
     try {
       const cartItems = localStorage.getItem('cartItems');
-      return cartItems ? JSON.parse(cartItems) : [];
+      return cartItems ? JSON.parse(cartItems) : []; // Convierte el JOn de Storage a un Objeto JS
     } catch (error) {
       console.error('Error parsing cart items:', error);
       return [];
@@ -42,7 +42,7 @@ export function CartProvider({ children }) {
   }, [cart]);
 
 
-	// 1. useEffect paa cargar todos productos
+	// 1. useEffect para cargar todos productos
 	
   useEffect(()=>{
     const findProducts = async () =>{

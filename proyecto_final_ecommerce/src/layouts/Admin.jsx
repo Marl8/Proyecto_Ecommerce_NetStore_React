@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./style/Admin.css";
 import Footer from "../components/Footer.jsx";
 import Header from "../components/Header.jsx";
 import FormNewProduct from "../components/FormNewProduct";
 import FormEditionProduct from "../components/FormEditionProduct.jsx";
+import CartContext from "../context/CartContext.jsx";
 
 const Admin = () => {
 
-  const [products, setProducts] = useState([]);
+  const {products, setProducts} = useContext(CartContext)
+
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(null);
   const [openEditor, setOpenEditor] = useState(false);
@@ -28,7 +30,7 @@ useEffect(() => {
       console.error("Error fetching data:", error);
       setLoading(false);
     }); 
-  }, [API_URI]);
+  }, [setProducts, API_URI]);
 
   const cargarProductos = async()=>{
     try {

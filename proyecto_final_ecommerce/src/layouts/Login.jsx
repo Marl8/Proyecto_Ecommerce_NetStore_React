@@ -17,7 +17,7 @@ const Login = () => {
   useEffect(() => {
     if (isAuthenticated) {
       // Si ya está autenticado, redirigir según el rol
-      navigate(rol === 'admin' ? '/admin' : '/');
+      navigate(rol === 'Admin' ? '/admin' : '/');
     }
   }, [isAuthenticated, rol, navigate])
 

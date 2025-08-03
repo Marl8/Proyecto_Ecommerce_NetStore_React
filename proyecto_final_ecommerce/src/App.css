@@ -51,7 +51,7 @@ nav ul{
   margin-right: auto;
 }
 
-ul .li-contacto{
+ul .li-final{
   margin-right: auto; /* Desplaza los elementos hacia la derecha */
 }
 
@@ -72,19 +72,83 @@ nav ul li .link img {
     padding: 0;
 }
 
-.btnCart-nav{
-    background-color: transparent;
-    color: red;
-    border: none;
-    padding-left: 0.5rem; 
-    padding-right: 0;
+/* Estilos para el botón del carrito */
+li .btnCart-nav {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  min-width: 20px;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.navButton{
-  background-color: transparent;
+.btnCart-nav:hover {
+  color: #8fd3fe;
+}
+
+/* Badge/notificación del contador */
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 19px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  animation: bounce 0.5s;
+  transform: translate(25%, -25%);
+  z-index: 10;
+}
+
+/* Animación para cuando se agregan items */
+@keyframes bounce {
+  0%, 100% { 
+    transform: translate(25%, -25%) scale(1); 
+  }
+  50% { 
+    transform: translate(25%, -25%) scale(1.3); 
+  }
+}
+
+/* Contenedor para mejor posicionamiento */
+.cart-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.btnUser-nav{
+    background-color: transparent;
     color: white;
-    border: 1px solid white;
-    padding: 0.5rem;
+    border: none;
+    padding: 0.5rem; 
+    margin: 0 0.5rem;
+}
+
+.navButton {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
 }
 
 ul .link{
@@ -189,22 +253,43 @@ ul .link{
 }
 
   .btnCart-nav{
-    width: 100%;
     text-align: center;
     padding-left: 0;
+    margin: auto;
   }
 
-  .btnLogin-nav{
-    
+  .cart-badge {
+    width: 16px;
+    height: 16px;
+    font-size: 0.65rem;
+    /* Ajuste específico para móvil */
+    transform: translate(20%, -20%);
+  }
+
+
+  .btnUser-nav{
+    width: 100%;
+    text-align: center;
+    padding-left: auto;
+  }
+
+  .btnLogin-nav{   
     color: aqua;
   }
 
-  .navButton{
-    width: 50%;
-    text-align: center;
-    margin: 0.5rem auto 1.5rem auto;
-}
-
+.logout-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .navButton {
+    width: auto; 
+    justify-content: center;
+    padding: 0.5rem 3rem;
+  }
 
   .home-main{
   flex: 1;

@@ -2,11 +2,11 @@
     {
         "username": "admin",
         "password": "123",
-        "role": "admin"
+        "role": "Admin"
     },
     {
         "username": "prueba",
         "password": "12345",
-        "role": "user"
+        "role": "User"
     }
 ]

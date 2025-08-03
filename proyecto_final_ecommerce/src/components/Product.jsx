@@ -29,7 +29,7 @@ const Product = ({producto}) => {
           +
         </button>
       </div>
-      <button onClick={() => {
+      <button className='btn-add-cart' onClick={() => {
         addToCart(producto, cantidad);
         setCantidad(1);
       }}>

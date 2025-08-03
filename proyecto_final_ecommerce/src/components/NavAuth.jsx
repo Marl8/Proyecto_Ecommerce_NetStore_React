@@ -4,34 +4,20 @@ import AuthContext from '../context/AuthContext';
 
 const NavAuth = () => {
 
-  const {isAuthenticated, rol, setIsAuth, setRol} = useContext(AuthContext)
-  
-  const logOut = ()=>{
-    setIsAuth(false);
-    setRol('');
-    localStorage.removeItem('isAuth');
-    localStorage.removeItem('rol');
-  }
+  const {isAuthenticated, rol} = useContext(AuthContext)
   
   return (
     <>
-      <li className="link"> 
-          {isAuthenticated && rol === 'admin'? 
+      <li className="li-final"> 
+          {isAuthenticated && rol === 'Admin'? 
             <NavLink className='link' to="/admin"  style={({ isActive }) => ({
             color: isActive ? '#8fd3fe' : 'white'})}>
               {rol}
             </NavLink> : 
-            <NavLink className='link' to="/"  style={({ isActive }) => ({
-            color: isActive ? '#8fd3fe' : 'white'})}>
+            <NavLink className='link' to="/">
               {rol}
             </NavLink>
           }
-      </li>
-
-      <li className="link">
-        <button className="navButton" onClick={logOut}>
-          <i className="fa-solid fa-right-from-bracket"></i>
-        </button>
       </li>
     </>
   );

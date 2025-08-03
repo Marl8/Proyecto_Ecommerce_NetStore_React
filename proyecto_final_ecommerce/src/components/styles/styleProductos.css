@@ -39,7 +39,7 @@
 .precio{
     font-size: 16px;
     font-weight: 700;
-    color: #2563eb;
+    color: #2c80e6;
     margin-bottom: 0.2rem;
 }
 
@@ -74,4 +74,16 @@
     font-size: 18px;
     font-weight: 600;
     transition: background-color 0.2s;
+    border-radius: 10px;
+}
+
+.btn-add-cart{
+    background-color: #2c80e6;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-add-cart:hover{
+    background-color: #2563eb;
 }
