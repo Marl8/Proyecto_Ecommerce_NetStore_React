@@ -11,10 +11,11 @@ const NavAuth = () => {
       <li className="li-final"> 
           {isAuthenticated && rol === 'Admin'? 
             <NavLink className='link' to="/admin"  style={({ isActive }) => ({
-            color: isActive ? '#8fd3fe' : 'white'})}>
+            color: isActive ? '#0d6efd' : 'white'})}>
               {rol}
             </NavLink> : 
-            <NavLink className='link' to="/">
+            <NavLink className='link' to="/purchase" style={({ isActive }) => ({
+            color: isActive ? '#0d6efd' : 'white'})}>
               {rol}
             </NavLink>
           }

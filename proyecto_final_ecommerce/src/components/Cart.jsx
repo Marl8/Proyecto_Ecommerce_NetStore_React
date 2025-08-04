@@ -1,10 +1,19 @@
 import './styles/styleCart.css'
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CartContext from '../context/CartContext';
+import  AuthContext from '../context/AuthContext'; 
 
 const Cart = ({onClose}) => {
 
   const { cart, isCartOpen, borrarProducto, vaciarCarrito } = useContext(CartContext)
+  const { isAuthenticated } = useContext(AuthContext)
+  const navigate = useNavigate();
+
+  const compra = ()=>{ 
+    isAuthenticated ? navigate('/purchase') : navigate('/login');
+    isCartOpen(false);
+  }
   
   return (
     <div className={`cart-drawer ${isCartOpen ? "open" : ""}`}>
@@ -42,7 +51,7 @@ const Cart = ({onClose}) => {
               </p>              
           </div>
           <div className="comprar-btn-container">
-            <button className='comprar-btn'>Terminar Compra</button>
+            <button className='comprar-btn'onClick={compra}>Terminar Compra</button>
           </div>
         </>
         )}

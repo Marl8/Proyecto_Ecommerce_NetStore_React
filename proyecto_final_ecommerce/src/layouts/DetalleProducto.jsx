@@ -47,7 +47,7 @@ const DetalleProducto = () => {
       product ? (
         <div className='home-container'>
           <Header/>
-            <div className='home-main'>
+            <div className='main-container'>
               <h1>Detalle del Producto</h1>
               <div className="container-style-details">
                 <div className='detalle-img'>

@@ -2,6 +2,7 @@ import './style/Login.css'
 import { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext  from '../context/AuthContext';
+import logo from '../assets/netstore_logo.svg';
 
 const Login = () => {
 
@@ -65,7 +66,10 @@ const Login = () => {
   return (
     <div className='login-container'>
       <div className='login-form-container'>
-        <h2 className='login-title'>LOGIN</h2>
+        <h2 className='login-title'>INICIAR SESIÓN</h2>
+        <div style={{background:'linear-gradient(to right, #ffeeee, #ddefbb)', padding: 0, margin: '0 0 1rem 0'}}>
+          <img src={logo} alt="Logo de la Aplicación" width={200}/>
+        </div>
         <form onSubmit={handleSubmit} className='form-login'>
           
           <label className='form-login-label'>Username</label>

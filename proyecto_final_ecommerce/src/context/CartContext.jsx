@@ -114,10 +114,20 @@ export function CartProvider({ children }) {
   };
 
 	return(
-  <CartContext.Provider value={{cart, setCart, products, setProducts: stableSetProduct, 
-    cargando, setCarga, error, setError, isCartOpen, setCartOpen, borrarProducto, vaciarCarrito,
-    addToCart, loading, setLoading: stableSetLoading, errors, setErrors, cantidad, setCantidad}}>
-      {children}
+  <CartContext.Provider value={{
+    cart, setCart, 
+    products, setProducts: stableSetProduct, 
+    cargando, setCarga, 
+    error, setError, 
+    isCartOpen, setCartOpen, 
+    borrarProducto, 
+    vaciarCarrito,
+    addToCart, 
+    loading, setLoading: stableSetLoading, 
+    errors, setErrors, 
+    cantidad, setCantidad
+    }}>
+      {children}      
   </CartContext.Provider>
 	)
 }

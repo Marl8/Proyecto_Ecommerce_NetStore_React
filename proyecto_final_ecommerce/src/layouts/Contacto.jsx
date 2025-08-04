@@ -6,7 +6,7 @@ const Contacto = () => {
   return (
     <div className='home-container'>
       <Header/>
-      <div className='home-main'>
+      <div className='main-container'>
         <h1>Contacto</h1>
         <form className="container-style contacto-container">
           <div className="form-container">

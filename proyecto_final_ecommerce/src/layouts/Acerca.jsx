@@ -5,7 +5,7 @@ const Acerca = () => {
   return (
     <div className='home-container'>
       <Header />
-      <div className='home-main'>
+      <div className='main-container'>
         <h1 style={{margin: '2.5rem'}}>Acerca de Nosotros</h1>
         <img className='img-acerca-de'
           src="https://oxefruit.es/wp-content/uploads/2024/12/cocteles-tematicos-ideas-eventos-especiales.png" 
