@@ -63,3 +63,19 @@ h1{
     transition: background-color 0.2s;
     margin: 0.5rem;
 }
+
+
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+
+    .container-style-details {
+    margin: auto;
+    }
+
+    .title-detalle{
+        margin-bottom: 1.5rem;
+        font-size: 25px;
+    }
+}

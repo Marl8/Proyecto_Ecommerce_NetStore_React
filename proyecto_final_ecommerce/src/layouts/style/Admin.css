@@ -124,13 +124,13 @@
     margin: 1.5rem; 
     }
 
-
     .title-admin {
         font-size: 2rem; 
     }
 
     .list {
     grid-template-columns: repeat(1, 1fr);
+    margin: 1rem;
     }
 
     .form{

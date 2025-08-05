@@ -63,7 +63,7 @@ const FormNewProduct = ({ onAgregar }) => {
         <label className="form-label-prod lbl-new-product">Nombre:</label>
         <input
           type="text"
-          className="form-input"
+          className="form-input-new"
           name="nombre"
           value={product.nombre}
           onChange={handleChange}
@@ -75,7 +75,7 @@ const FormNewProduct = ({ onAgregar }) => {
         <label className="form-label-prod lbl-new-product">Precio:</label>
         <input
           type="number"
-          className="form-input"
+          className="form-input-new"
           name="precio"
           value={product.precio}
           onChange={handleChange}
@@ -88,7 +88,7 @@ const FormNewProduct = ({ onAgregar }) => {
         <label className="form-label-prod lbl-new-product">Stock:</label>
         <input
           type="number"
-          className="form-input"
+          className="form-input-new"
           name="stock"
           value={product.stock}
           onChange={handleChange}
@@ -101,7 +101,7 @@ const FormNewProduct = ({ onAgregar }) => {
         <label className="form-label-prod lbl-new-product">Imagen:</label>
         <input
           type="text"
-          className="form-input"
+          className="form-input-new"
           name="imagen"
           value={product.imagen}
           onChange={handleChange}
@@ -113,7 +113,7 @@ const FormNewProduct = ({ onAgregar }) => {
         <label className="form-label-prod lbl-new-product">Categoria:</label>
         <input
           type="text"
-          className="form-input"
+          className="form-input-new"
           name="categoria"
           value={product.categoria}
           onChange={handleChange}
@@ -125,7 +125,7 @@ const FormNewProduct = ({ onAgregar }) => {
       <div className="form-container-new-product">
         <label className="form-label-prod lbl-new-product">Descripción:</label>
         <textarea
-          className="form-textarea"
+          className="form-textarea-new"
           name="descripcion"
           value={product.descripcion}
           onChange={handleChange}
@@ -135,7 +135,7 @@ const FormNewProduct = ({ onAgregar }) => {
           <p style={{ color: "red" }}>{errors.descripcion}</p>
         )}
       </div>
-      <button className="button-form" type="submit">
+      <button className="button-form-new-product" type="submit">
         Agregar Producto
       </button>
     </form>

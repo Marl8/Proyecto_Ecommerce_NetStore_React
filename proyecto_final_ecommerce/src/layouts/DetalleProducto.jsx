@@ -48,7 +48,7 @@ const DetalleProducto = () => {
         <div className='home-container'>
           <Header/>
             <div className='main-container'>
-              <h1>Detalle del Producto</h1>
+              <h1 className="title-detalle">Detalle del Producto</h1>
               <div className="container-style-details">
                 <div className='detalle-img'>
                   <img src={product.imagen} alt="Imagen del Producto" />

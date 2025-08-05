@@ -47,7 +47,7 @@ const Contacto = () => {
               required
             />
           </div>
-          <button className="button-form contacto-btn">
+          <button className="contacto-btn">
             Enviar
           </button>
         </form>

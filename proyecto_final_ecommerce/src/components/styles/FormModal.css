@@ -114,7 +114,7 @@ to {
     color: black;
 }
 
-.button-form { 
+.button-form-modal { 
     background-color: black;
     color: white;
     border: none;
@@ -139,7 +139,7 @@ to {
     }
     
     .container-style {
-        margin: 1rem 4rem 1rem 2rem;
+        margin: 1rem 4rem 2.5rem 2rem;
     }
 
     .form-label {
@@ -154,11 +154,11 @@ to {
         width: 17rem;
     }
 
-    .contacto-container{
-    padding: 1rem;
+    .modal-close-button{
+        margin-top: 1.5rem;
     }
 
-    .button-form{
-        width: 82%;
+    .button-form-modal{
+        width: auto;
     }
 }

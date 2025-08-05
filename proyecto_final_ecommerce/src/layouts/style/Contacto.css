@@ -59,7 +59,8 @@
     color: black;
 }
 
-.button-form { 
+
+.contacto-btn{
     background-color: black;
     color: white;
     border: none;
@@ -70,11 +71,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 0.5rem;
-    letter-spacing: 0.5px; 
-    width: 20rem;
-}
-
-.contacto-btn{
+    letter-spacing: 0.5px;
     width: 90%;
 }
 
@@ -85,6 +82,7 @@
 
     h1{
     margin-top: 1rem;
+    margin-bottom: 1.5rem;
     }
     
     .container-style {
@@ -92,6 +90,10 @@
         flex-direction: column;
         justify-content: center;
         margin: 1rem auto;
+    }
+
+    .container-style-contacto {
+    margin: auto;
     }
 
     .form-label {
@@ -108,9 +110,5 @@
 
     .contacto-container{
     padding: 1rem;
-    }
-
-    .button-form{
-        width: auto;
     }
 }

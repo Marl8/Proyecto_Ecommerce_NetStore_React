@@ -102,7 +102,7 @@ function FormEditionProduct({ productSelected, onEdit }) {
             required
           />
         </div>
-        <button type="submit" className="button-form">
+        <button type="submit" className="button-form-modal">
           Editar
         </button>
     </form>
