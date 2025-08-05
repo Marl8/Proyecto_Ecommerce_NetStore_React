@@ -35,7 +35,7 @@ function FormEditionProduct({ productSelected, onEdit }) {
         </div>
         <h2 className="form-title">Editar Producto</h2>
         <div className="form-container">
-          <label className="form-label label-new-product">Nombre:</label>
+          <label className="form-label label-edit-product">Nombre:</label>
           <input
             type="text"
             name="nombre"
@@ -46,7 +46,7 @@ function FormEditionProduct({ productSelected, onEdit }) {
           />
         </div>
         <div className="form-container">
-          <label className="form-label label-new-product">Precio:</label>
+          <label className="form-label label-edit-product">Precio:</label>
           <input
             type="text"
             name="precio"
@@ -58,7 +58,7 @@ function FormEditionProduct({ productSelected, onEdit }) {
           />
         </div>
         <div className="form-container">
-          <label className="form-label label-new-product">Stock:</label>
+          <label className="form-label label-edit-product">Stock:</label>
           <input
             type="number"
             name="stock"
@@ -69,7 +69,7 @@ function FormEditionProduct({ productSelected, onEdit }) {
           />
         </div>
         <div className="form-container">
-          <label className="form-label label-new-product">Imagen URL:</label>
+          <label className="form-label label-edit-product">Imagen URL:</label>
           <input
             type="text"
             name="imagen"
@@ -80,7 +80,7 @@ function FormEditionProduct({ productSelected, onEdit }) {
           />
         </div>
         <div className="form-container">
-          <label className="form-label label-new-product">Categoria:</label>
+          <label className="form-label label-edit-product">Categoria:</label>
           <input
             type="text"
             name="categoria"
@@ -91,7 +91,7 @@ function FormEditionProduct({ productSelected, onEdit }) {
           />
         </div>
         <div className="form-container">
-          <label className="form-label label-new-product">Descripcion:</label>
+          <label className="form-label label-edit-product">Descripcion:</label>
           <textarea
             type="text"
             name="descripcion"

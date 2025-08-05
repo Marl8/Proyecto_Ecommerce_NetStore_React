@@ -18,19 +18,7 @@
     background-color: #f5f5f5;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    padding: 2rem 1rem;
-    width: 100%;
-    max-width: 600px;
-    max-height: 90vh;
-    z-index: 1000;
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-.container-style-nwew-product {
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    padding: 2rem 1rem;
+    padding: 0.5rem 1rem 2rem;
     width: 100%;
     max-width: 600px;
     max-height: 90vh;
@@ -54,10 +42,13 @@
     transition: color 0.3s ease;
     padding: 0.5rem;
     line-height: 1;
+    border: 1px solid black;
+    border-radius: 6px;
 }
 
 .modal-close-button:hover {
     color: red;
+    border-color: red;
 }
 
 /* Animación de entrada */
@@ -77,6 +68,14 @@ to {
     margin: 0.5rem auto 1.5rem auto;
 }
 
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    max-height: 100px;
+}
+
 .form-label {
     color: black;
     font-weight: bold;
@@ -86,7 +85,7 @@ to {
     text-align: left;
 }
 
-.label-new-product{
+.label-edit-product{
     margin-left: 8rem;
 }
 
@@ -100,21 +99,6 @@ to {
     transition: border 0.3s ease;
     background-color: white;
     color: black;
-}
-
-.form-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    max-height: 100px;
-}
-
-.form-container-new-product{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
 }
 
 .form-textarea {
@@ -144,15 +128,6 @@ to {
     letter-spacing: 0.5px; 
     width: 20rem;
 }
-
-.contacto-container{
-    padding: 2rem 3rem;
-}
-
-.contacto-btn{
-    width: 90%;
-}
-
 
 
 /* Media Queries */

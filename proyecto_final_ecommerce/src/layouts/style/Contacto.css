@@ -6,6 +6,10 @@
     padding: 1rem 0.5rem 2rem;
 }
 
+.contacto-container{
+    padding: 2rem 3rem;
+}
+
 .form-title{
     margin: 0.5rem auto 1.5rem auto;
 }
@@ -70,15 +74,9 @@
     width: 20rem;
 }
 
-.contacto-container{
-    padding: 2rem 3rem;
-}
-
 .contacto-btn{
     width: 90%;
 }
-
-
 
 
 /* Media Queries */

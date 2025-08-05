@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import CartContext from "../context/CartContext";
-import "./styles/FormStyles.css";
+import "./styles/FormNewProduct.css";
 
 const FormNewProduct = ({ onAgregar }) => {
   const { errors, setErrors } = useContext(CartContext);

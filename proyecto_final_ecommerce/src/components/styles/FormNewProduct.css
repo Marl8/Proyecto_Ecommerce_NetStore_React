@@ -10,6 +10,13 @@
     margin: 0.5rem auto 1.5rem auto;
 }
 
+.form-container-new-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
 .form-label-prod {
     color: black;
     font-weight: bold;
@@ -35,12 +42,6 @@
     color: black;
 }
 
-.form-container-new-product{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-}
 
 .form-textarea {
     width: 20rem;
@@ -70,16 +71,6 @@
     width: 20rem;
 }
 
-.contacto-container{
-    padding: 2rem 3rem;
-}
-
-.contacto-btn{
-    width: 90%;
-}
-
-
-
 
 /* Media Queries */
 
@@ -106,10 +97,6 @@
 
     .form-textarea {
         width: 17rem;
-    }
-
-    .contacto-container{
-    padding: 1rem;
     }
 
     .button-form{

@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import CartContext from "./CartContext";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 const AdminContext = createContext();
 
@@ -57,7 +58,11 @@ useEffect(() => {
         throw new Error('Error al agregar producto')
     }
     const data = await respuesta.json()
-    alert('Producto agregado correctamente')
+    Swal.fire({
+    title: "Agregado",
+    text: "Producto agregado correctamente!",
+    icon: "success"
+    });
     cargarProductos();
     console.log(data)
     }catch(error){
@@ -79,34 +84,60 @@ useEffect(() => {
       }
       const data = await respuesta.json();
       console.log(data);              
-      alert('Producto actualizado correctamente')
+      Swal.fire({
+      title: "Actualizado",
+      text: "Producto actualizado correctamente!",
+      icon: "success"
+      });
       navigate('/admin')
       cargarProductos()
     } catch (error) {
-        console.log(error.message);
-        
+        console.log(error.message);        
     }
   }
 
-  const deleteProduct = async (id)=>{
-    const confirmar = window.confirm('Estas seguro de eliminar el producto?')
-    if (confirmar) {
-      try{
-        const respuesta = await fetch(`${API_URI}/${id}`,{
-            method:'DELETE',
-        })
-        if(!respuesta.ok){
-          throw new Error('Error al eliminar');
-        } 
-        alert('Producto Eliminado correctamente');
-        cargarProductos();
-      }catch(error){
-        alert('Hubo un problema al eliminar el producto')
-        console.log(error.message);
-      }
-    }
-  }
+  const deleteProduct = async (id) => {
   
+    // Mostrar el Swal de confirmación
+    const { isConfirmed } = await Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Esta acción no se puede deshacer.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, eliminarlo',
+      cancelButtonText: 'Cancelar',
+      reverseButtons: true,
+      confirmButtonColor: "#d33",
+    });
+
+    if (isConfirmed) {
+      try {
+        const respuesta = await fetch(`${API_URI}/${id}`, {
+          method: 'DELETE',
+        });
+
+        if (!respuesta.ok) {
+          throw new Error('Error al eliminar');
+        }
+        Swal.fire({
+          title: 'Eliminado',
+          text: 'Producto eliminado correctamente!',
+          icon: 'success',
+        });
+        cargarProductos();
+      } catch (error) {
+        Swal.fire({
+          title: 'Error',
+          text: 'Hubo un problema al eliminar el producto',
+          icon: 'error',
+        });
+        console.error(error.message);
+      }
+    } else {
+      console.log('Acción cancelada');
+    }
+  };
+    
 
   return (
     <AdminContext.Provider
