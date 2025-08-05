@@ -36,7 +36,7 @@
 
 nav{
   padding: 0 2.5rem;
-  position: fixed !important;
+  position: fixed;
   z-index: 1030;
   width: 95%;
 }

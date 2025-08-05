@@ -57,10 +57,10 @@ const FormNewProduct = ({ onAgregar }) => {
   };
 
   return (
-    <form className="container-style" onSubmit={handleSubmit}>
+    <form className="container-style-new-product" onSubmit={handleSubmit}>
       <h2 className="form-title">Agregar Producto</h2>
-      <div className="form-container">
-        <label className="form-label label-new-product">Nombre:</label>
+      <div className="form-container-new-product">
+        <label className="form-label-prod lbl-new-product">Nombre:</label>
         <input
           type="text"
           className="form-input"
@@ -71,8 +71,8 @@ const FormNewProduct = ({ onAgregar }) => {
         />
         {errors.nombre && <p style={{ color: "red" }}>{errors.nombre}</p>}
       </div>
-      <div className="form-container">
-        <label className="form-label label-new-product">Precio:</label>
+      <div className="form-container-new-product">
+        <label className="form-label-prod lbl-new-product">Precio:</label>
         <input
           type="number"
           className="form-input"
@@ -84,8 +84,8 @@ const FormNewProduct = ({ onAgregar }) => {
         />
         {errors.precio && <p style={{ color: "red" }}>{errors.precio}</p>}
       </div>
-      <div className="form-container">
-        <label className="form-label label-new-product">Stock:</label>
+      <div className="form-container-new-product">
+        <label className="form-label-prod lbl-new-product">Stock:</label>
         <input
           type="number"
           className="form-input"
@@ -97,8 +97,8 @@ const FormNewProduct = ({ onAgregar }) => {
         />
         {errors.stock && <p style={{ color: "red" }}>{errors.stock}</p>}
       </div>
-      <div className="form-container">
-        <label className="form-label label-new-product">Imagen:</label>
+      <div className="form-container-new-product">
+        <label className="form-label-prod lbl-new-product">Imagen:</label>
         <input
           type="text"
           className="form-input"
@@ -109,8 +109,8 @@ const FormNewProduct = ({ onAgregar }) => {
         />
         {errors.imagen && <p style={{ color: "red" }}>{errors.imagen}</p>}
       </div>
-      <div className="form-container">
-        <label className="form-label label-new-product">Categoria:</label>
+      <div className="form-container-new-product">
+        <label className="form-label-prod lbl-new-product">Categoria:</label>
         <input
           type="text"
           className="form-input"
@@ -122,8 +122,8 @@ const FormNewProduct = ({ onAgregar }) => {
         {errors.categoria && <p style={{ color: "red" }}>{errors.categoria}</p>}
       </div>
 
-      <div className="form-container">
-        <label className="form-label label-new-product">Descripción:</label>
+      <div className="form-container-new-product">
+        <label className="form-label-prod lbl-new-product">Descripción:</label>
         <textarea
           className="form-textarea"
           name="descripcion"

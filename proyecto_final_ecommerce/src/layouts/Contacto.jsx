@@ -1,6 +1,6 @@
 import Footer from '../components/Footer.jsx'
 import Header from '../components/Header.jsx'
-import "../components/styles/FormStyles.css";
+import "./style/Contacto.css";
 
 const Contacto = () => {
   return (
@@ -8,9 +8,9 @@ const Contacto = () => {
       <Header/>
       <div className='main-container'>
         <h1>Contacto</h1>
-        <form className="container-style contacto-container">
-          <div className="form-container">
-            <label className="form-label">Nombre:</label>
+        <form className="container-style-contacto contacto-container">
+          <div className="form-container-contacto">
+            <label className="form-label-contacto">Nombre:</label>
             <input
               type="text"
               className="form-input"
@@ -18,8 +18,8 @@ const Contacto = () => {
               required
             />
           </div>
-          <div className="form-container">
-            <label className="form-label">Apellido:</label>
+          <div className="form-container-contacto">
+            <label className="form-label-contacto">Apellido:</label>
             <input
               type="text"
               className="form-input"
@@ -28,8 +28,8 @@ const Contacto = () => {
             />
           </div> 
 
-          <div className="form-container">
-            <label className="form-label">Email:</label>
+          <div className="form-container-contacto">
+            <label className="form-label-contacto">Email:</label>
             <input
               type="email"
               className="form-input"
@@ -39,8 +39,8 @@ const Contacto = () => {
             />
           </div>
 
-          <div className="form-container">
-            <label className="form-label">Comentario:</label>
+          <div className="form-container-contacto">
+            <label className="form-label-contacto">Comentario:</label>
             <textarea
               className="form-textarea"
               name="descripcion"

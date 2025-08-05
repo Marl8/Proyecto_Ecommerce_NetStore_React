@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useCallback } from 'react';
+import {toast} from 'react-toastify';
 
 // Crear el contexto 
 const CartContext = createContext();
@@ -74,9 +75,11 @@ export function CartProvider({ children }) {
       setCart(cart.map((item) =>
         item.id === product.id ? { ...item, cantidad: item.cantidad + cantidadItems } : item
       ));
+      toast.success(`El producto ${product.nombre} fue agregado con éxito`, {theme: 'dark'});
     } else {
       // Si el producto no existe, agrega el nuevo producto al carrito con la cantidad indicada
       setCart([...cart, { ...product, cantidad: cantidadItems }]);
+      toast.success(`El producto ${product.nombre} fue agregado con éxito`, {theme: 'dark'});
     }
   }
 
@@ -105,6 +108,7 @@ export function CartProvider({ children }) {
         })
         .filter((item) => item != null);
     });
+    toast.error(`El producto ${product.nombre} fue eliminado con éxito`);
   };
 
   // 4. Función para limpiar el carrito

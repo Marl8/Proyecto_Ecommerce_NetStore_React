@@ -1,0 +1,189 @@
+/* Fondo oscuro detrás del modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Modal (formulario) */
+.container-style {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.container-style-nwew-product {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-close-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.modal-close-button {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    line-height: 1;
+}
+
+.modal-close-button:hover {
+    color: red;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+from {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+to {
+    opacity: 1;
+    transform: scale(1);
+    }
+}
+
+.form-title{
+    margin: 0.5rem auto 1.5rem auto;
+}
+
+.form-label {
+    color: black;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: -0.8rem;
+    width: 100%; 
+    text-align: left;
+}
+
+.label-new-product{
+    margin-left: 8rem;
+}
+
+.form-input {
+    width: 20rem;
+    margin: 0.5rem auto 1rem auto;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border 0.3s ease;
+    background-color: white;
+    color: black;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    max-height: 100px;
+}
+
+.form-container-new-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-textarea {
+    width: 20rem;
+    margin: 0.5rem auto 1rem auto;
+    min-height: 8rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border 0.3s ease;
+    background-color: white;
+    color: black;
+}
+
+.button-form { 
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 1rem; 
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
+    letter-spacing: 0.5px; 
+    width: 20rem;
+}
+
+.contacto-container{
+    padding: 2rem 3rem;
+}
+
+.contacto-btn{
+    width: 90%;
+}
+
+
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+
+    h1{
+    margin-top: 1rem;
+    }
+    
+    .container-style {
+        margin: 1rem 4rem 1rem 2rem;
+    }
+
+    .form-label {
+        margin-left: 0;
+    }
+
+    .form-input {
+        width: 17rem;
+    }
+
+    .form-textarea {
+        width: 17rem;
+    }
+
+    .contacto-container{
+    padding: 1rem;
+    }
+
+    .button-form{
+        width: 82%;
+    }
+}
