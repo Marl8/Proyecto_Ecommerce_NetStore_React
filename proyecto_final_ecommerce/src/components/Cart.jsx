@@ -6,13 +6,13 @@ import  AuthContext from '../context/AuthContext';
 
 const Cart = ({onClose}) => {
 
-  const { cart, isCartOpen, borrarProducto, vaciarCarrito } = useContext(CartContext)
+  const { cart, isCartOpen, setCartOpen, borrarProducto, vaciarCarrito } = useContext(CartContext)
   const { isAuthenticated } = useContext(AuthContext)
   const navigate = useNavigate();
 
   const compra = ()=>{ 
     isAuthenticated ? navigate('/purchase') : navigate('/login');
-    isCartOpen(false);
+    setCartOpen(false);
   }
   
   return (
