@@ -51,13 +51,13 @@ const Cart = ({onClose}) => {
               </p>              
           </div>
           <div className="comprar-btn-container">
-            <button className='comprar-btn'onClick={compra}>Terminar Compra</button>
+            <button className='comprar-btn' aria-label="Finalizar Compra" onClick={compra}>Finalizar Compra</button>
           </div>
         </>
         )}
       </div>
       <div className="vaciar-btn-container">
-        <button className='vaciar-btn' onClick={vaciarCarrito}>Vaciar Carrito</button>
+        <button className='vaciar-btn' aria-label="Vaciar carrito" onClick={vaciarCarrito}>Vaciar Carrito</button>
       </div>
     </div>
   );

@@ -89,8 +89,7 @@ const Login = () => {
           <div style={{ color: 'red', fontSize: '0.875rem', marginTop: '0.25rem' }}>
             {errors.password}
           </div>
-        )}    
-
+        )}            
           <button type="submit" className='button-login'>Ingresar</button>
         </form>
       </div>
