@@ -98,7 +98,7 @@ useEffect(() => {
 
   const deleteProduct = async (id) => {
   
-    // Mostrar el Swal de confirmación
+    // Destructuramos el objeto que devuelve Swal para obtener el bool de Confirmación
     const { isConfirmed } = await Swal.fire({
       title: '¿Estás seguro?',
       text: 'Esta acción no se puede deshacer.',
