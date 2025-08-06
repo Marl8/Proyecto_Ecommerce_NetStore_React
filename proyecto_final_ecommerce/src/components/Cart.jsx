@@ -35,11 +35,16 @@ const Cart = ({onClose}) => {
                 <div>
                   <li key={index} style={{ color: "black" }}>
                     <div className='cart-item-view'>
-                      <p>{item.nombre} - $ {item.precio}</p>
-                      Cantidad: {item.cantidad}
-                      <button onClick={() => borrarProducto(item)}>
-                        <i className="fa-solid fa-trash"></i>
-                      </button>
+                      <p>
+                        <strong>{item.nombre}</strong> -
+                        <span style={{color: '#2c80e6'}}>$ <strong>{item.precio}</strong></span>
+                      </p>
+                      <p>
+                        Cantidad: {item.cantidad}
+                        <button onClick={() => borrarProducto(item)}>
+                          <i className="fa-solid fa-trash"></i>
+                        </button>
+                      </p>
                     </div> 
                   </li>
                 </div>

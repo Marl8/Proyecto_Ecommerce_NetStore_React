@@ -1,11 +1,12 @@
 import {Link} from 'react-router-dom';
 import "./styles/styleProductos.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import CartContext from "../context/CartContext";
 
 const Product = ({producto}) => {
 
-  const {addToCart, cantidad, setCantidad}= useContext(CartContext);
+  const {addToCart}= useContext(CartContext);
+  const [cantidad, setCantidad] = useState(1);
 
   const increase = () => setCantidad((prod) => (prod < producto.stock ? prod + 1 : prod));
   const decrease = () => setCantidad((prod) => (prod > 1 ? prod - 1 : 1));

@@ -13,7 +13,7 @@ export function CartProvider({ children }) {
   const [errors, setErrors] = useState({})
 	const [isCartOpen, setCartOpen] = useState(false);
 	const [loading, setLoading] = useState(true);
-  const [cantidad, setCantidad] = useState(1);
+  const [cantidad, setCantidad ] = useState(1);
   const API_URI = import.meta.env.VITE_API_URI; // Variable de entorno
 
   // Wrap las funciones con useCallback para evitar cambios de referencia
@@ -71,12 +71,22 @@ export function CartProvider({ children }) {
     const productExist = cart.find(item => item.id === product.id);
 
     if (productExist) {
-      // Si el producto existe, actualiza la cantidad
-      setCart(cart.map((item) =>
-        item.id === product.id ? { ...item, cantidad: item.cantidad + cantidadItems } : item
-      ));
-      toast.success(`El producto ${product.nombre} fue agregado con éxito`, {theme: 'dark'});
-    } else {
+    // Si el producto existe, actualiza la cantidad
+    setCart(cart.map((item) => {
+      if (item.id === product.id) {
+        // Si la cantidad total no supera el stock, actualiza el producto
+        if (item.cantidad + cantidadItems <= product.stock) {
+          toast.success(`El producto ${product.nombre} fue agregado con éxito`, { theme: 'dark' });
+          return { ...item, cantidad: item.cantidad + cantidadItems };
+        } else {
+          // Si la cantidad total supera el stock, mostramos el error
+          toast.error(`La cantidad seleccionada del producto ${product.nombre} no puede superar el stock existente`);
+          return item; // No modificamos el carrito
+        }
+      }
+      return item; // No modifica otros productos
+    }));
+  } else {
       // Si el producto no existe, agrega el nuevo producto al carrito con la cantidad indicada
       setCart([...cart, { ...product, cantidad: cantidadItems }]);
       toast.success(`El producto ${product.nombre} fue agregado con éxito`, {theme: 'dark'});
