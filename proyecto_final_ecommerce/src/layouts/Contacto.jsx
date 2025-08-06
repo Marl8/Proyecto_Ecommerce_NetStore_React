@@ -1,5 +1,6 @@
 import Footer from '../components/Footer.jsx'
 import Header from '../components/Header.jsx'
+import WhatsAppChat from '../components/WhatsAppChat.jsx'
 import "./style/Contacto.css";
 
 const Contacto = () => {
@@ -52,6 +53,7 @@ const Contacto = () => {
           </button>
         </form>
       </div>
+      <WhatsAppChat/>
       <Footer/>
     </div>
   )

@@ -1,6 +1,7 @@
 import Footer from '../components/Footer.jsx'
 import Header from '../components/Header.jsx'
 import GalleryProducts from '../components/GalleryProducts.jsx'
+import WhatsAppChat from '../components/WhatsAppChat.jsx'
 import logo from '../assets/netstore_logo.svg'
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
         </div>
         <GalleryProducts/>  
       </div>
+      <WhatsAppChat/>
       <Footer/>
     </div>
   )

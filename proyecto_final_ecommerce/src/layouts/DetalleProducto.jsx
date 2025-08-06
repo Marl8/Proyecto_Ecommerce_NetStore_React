@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import CartContext from "../context/CartContext"
 import Footer from '../components/Footer.jsx'
 import Header from '../components/Header.jsx'
+import WhatsAppChat from '../components/WhatsAppChat.jsx'
 import NotFound from '../components/NotFound.jsx'
 import load from '../assets/loading.gif'
 import './style/DetalleProducto.css'
@@ -73,6 +74,7 @@ const DetalleProducto = () => {
                 }}>Agregar al Carrito</button>
               </div>              
             </div>
+            <WhatsAppChat/>
           <Footer/>
         </div>      
       ) : (<NotFound/>)

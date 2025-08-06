@@ -1,0 +1,82 @@
+/* Botón flotante de WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 28px;
+  background-color: #25d366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Modal de chat */
+.whatsapp-modal {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabecera del chat */
+.chat-header {
+  background-color: #26c05e;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-close{
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  
+}
+
+.btn-close:hover{
+  color: #1d9047;
+  border-color: #1d9047;
+}
+
+/* Cuerpo del chat */
+.chat-body {
+  padding: 1.5rem;
+  flex: 1;
+  background-color: #f0f0f0;
+  font-size: 14px;
+}
+
+/* Input del chat */
+.chat-input {
+  display: flex;
+  margin: 1rem 0.5rem;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+.chat-input button {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}

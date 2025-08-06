@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import CartContext from '../context/CartContext'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import WhatsAppChat from '../components/WhatsAppChat.jsx'
 
 
 const Purchase = () => {
@@ -38,6 +39,7 @@ const Purchase = () => {
       <div className="purchase-btn-container">
         <button className='pagar-btn'>Pagar</button>
       </div>
+      <WhatsAppChat/>
       <Footer/> 
     </div>
   )

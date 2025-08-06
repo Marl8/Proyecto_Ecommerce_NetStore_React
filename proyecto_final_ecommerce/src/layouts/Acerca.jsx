@@ -1,5 +1,6 @@
 import Footer from '../components/Footer.jsx'
 import Header from '../components/Header.jsx'
+import WhatsAppChat from '../components/WhatsAppChat.jsx'
 
 const Acerca = () => {
   return (
@@ -18,6 +19,7 @@ const Acerca = () => {
           </p>
         </div>
       </div>
+      <WhatsAppChat/>
       <Footer/>
     </div>
   )
