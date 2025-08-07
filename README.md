@@ -10,19 +10,4 @@
     style="width: 900px; height: 600px;"
   />
 </div>
-</br>
-<div align="center">
-  <img 
-    src="https://github.com/user-attachments/assets/b5aeea29-0389-4553-8031-471105293fd8" 
-    alt="streak stats"
-    style="width: 900px; height: 600px;"
-  />
-</div>
-</br>
-<div align="center">
-    <img 
-    src="https://github.com/user-attachments/assets/fdba2930-7d96-4643-b592-d70eac055b1c" 
-    alt="streak stats"
-    style="width: 900px; height: 600px;"
-  />
-</div>
+
