@@ -22,16 +22,16 @@ const Footer = () => {
         <div className="footer-container">
           <ul className="footer-ul-social">
             <li className="li-footer-social">
-              <i class="fa-brands fa-facebook fa-xl fa-primary-color: green"></i>
+              <i class="fa-brands fa-facebook fa-lg"></i>
             </li>
             <li className="li-footer-social">
-              <i class="fa-brands fa-instagram fa-xl"></i>
+              <i class="fa-brands fa-instagram fa-lg"></i>
             </li>
             <li class="li-footer-social">
-              <i class="fa-brands fa-x-twitter fa-xl"></i>
+              <i class="fa-brands fa-x-twitter fa-lg"></i>
             </li>
             <li class="li-footer-social">
-              <i class="fa-brands fa-tiktok fa-xl"></i>
+              <i class="fa-brands fa-tiktok fa-lg"></i>
             </li>
           </ul>
       </div>
