@@ -42,7 +42,7 @@ const Login = () => {
       const res = await fetch('data/users.json');
       const users = await res.json();
 
-      const foundUser = users.find((user) => user.username === username && user.password === password);
+      const foundUser = users.find((user) => user.username === username.toLowerCase() && user.password === password);
 
       if (!foundUser) {
         setErrors({username: 'Credenciales inválidas'});
