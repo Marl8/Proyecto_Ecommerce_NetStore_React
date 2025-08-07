@@ -19,6 +19,11 @@
   box-sizing: content-box;
 }
 
+body {
+  background-color: #ffffff; 
+  color: #000000;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
