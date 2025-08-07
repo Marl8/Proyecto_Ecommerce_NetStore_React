@@ -17,7 +17,7 @@ const GalleryProducts = () => {
   useEffect(() => {
     if (search) {
       const filtered = products.filter(p => 
-        p?.nombre?.toLowerCase().startsWith(search.toLowerCase()));
+        p?.nombre?.toLowerCase().includes(search.toLowerCase()));
       console.log('Productos filtrados: ' + filtered)  
       setFilteredProducts(filtered);
     }
