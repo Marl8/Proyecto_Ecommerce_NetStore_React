@@ -16,11 +16,14 @@
 
 .title-admin{
     font-size: 35px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .title-admin-container {
+    background: linear-gradient(to right, #ffeeee, #ddefbb);
     text-align: center;
     margin: 8rem 1.5rem 1.5rem; 
+    padding-bottom: 2rem;
 }
 
 .form-container-admin{

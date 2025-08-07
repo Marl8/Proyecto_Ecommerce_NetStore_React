@@ -18,7 +18,7 @@ const WhatsAppChat = () => {
       {isOpen && (
         <div className="whatsapp-modal">
           <div className="chat-header">
-            <span>Soporte</span>
+            <span className="soporte-title">Soporte</span>
             <button className="btn-close" onClick={toggleChat}>✕</button>
           </div>
           <div className="chat-body">

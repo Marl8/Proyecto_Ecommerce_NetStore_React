@@ -8,7 +8,7 @@ const Contacto = () => {
     <div className='home-container'>
       <Header/>
       <div className='main-container'>
-        <h1>Contacto</h1>
+        <h1 className='contacto-title'>Contacto</h1>
         <form className="container-style-contacto contacto-container">
           <div className="form-container-contacto">
             <label className="form-label-contacto">Nombre:</label>

@@ -1,6 +1,7 @@
 h1{
     margin-top: 2rem;
     font-size: 33px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .container-style-details {

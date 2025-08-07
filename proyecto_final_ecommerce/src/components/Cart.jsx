@@ -37,7 +37,7 @@ const Cart = ({onClose}) => {
                     <div className='cart-item-view'>
                       <p>
                         <strong>{item.nombre}</strong> -
-                        <span style={{color: '#2c80e6'}}>$ <strong>{item.precio}</strong></span>
+                        <span style={{color: '#2c80e6'}}> $ <strong>{item.precio}</strong></span>
                       </p>
                       <p>
                         Cantidad: {item.cantidad}

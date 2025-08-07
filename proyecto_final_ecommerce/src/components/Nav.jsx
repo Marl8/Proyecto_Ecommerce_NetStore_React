@@ -15,7 +15,7 @@ const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav style={{ backgroundColor: "black", color: "white" }}>
+    <nav style={{ background: "linear-gradient(to bottom, #6c6c6cff, #000000)", color: "white" }}>
       <div className="nav-header">
         <button className="btn-toggle-menu" onClick={() => setMenuOpen(!menuOpen)}>
           ☰

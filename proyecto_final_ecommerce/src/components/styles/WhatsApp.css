@@ -30,12 +30,16 @@
 
 /* Cabecera del chat */
 .chat-header {
-  background-color: #26c05e;
+  background-color: #25b85b;
   color: white;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.soporte-title{
+  margin-left: 0.5rem;
 }
 
 .btn-close{
