@@ -211,7 +211,7 @@ li .btnCart-nav {
 /* Contenedor page ACERCA */
 
 .img-acerca-de {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   border-radius: 8px;
   margin-bottom: 2rem;
@@ -507,7 +507,7 @@ li .btnCart-nav {
   }
 
   .img-acerca-de {
-    width: 100%;
+    max-width: 100%;
     margin-bottom: 1rem;
   }
 
